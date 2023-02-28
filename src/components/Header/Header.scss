@@ -1,0 +1,136 @@
+@import '../../basic_styles/main.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 48px;
+  padding: 13px 0px 13px 16px;
+
+  background: $color-white;
+  box-shadow: 0px 1px 0px $color-elements;
+
+  @include onDesktop {
+    height: 64px;
+    padding: 18px 0px 18px 24px;
+  }
+
+  &__logo {
+    width: 64px;
+
+    @include onTablet {
+      margin-right: 32px;
+    }
+
+    @include onDesktop {
+      width: 80px;
+      margin-right: 48px;
+    }
+  }
+
+  &__icons {
+    display: none;
+    white-space: nowrap;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__icon,
+  &__menu {
+    padding: 16px;
+    background: $color-white;
+    box-shadow: -1px 0px 0px $color-elements;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    @include onDesktop {
+      padding: 24px;
+    }
+  }
+
+  &__menu {
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  display: none;
+  margin-right: auto;
+
+  @include onTablet {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    @include onTablet {
+      margin-right: 32px;
+    }
+
+    @include onDesktop {
+      margin-right: 64px;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 48px;
+
+      @include onDesktop {
+        height: 64px;
+      }
+
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 11px;
+      letter-spacing: 0.04em;
+      text-align: center;
+      text-transform: uppercase;
+      color: $color-secondary;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.active {
+  position: relative;
+  color: $color-primary;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+
+    display: block;
+    height: 3px;
+    width: 100%;
+
+    background-color: $color-primary;
+  }
+}
