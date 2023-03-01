@@ -7,10 +7,12 @@ import { Logo } from './Logo/Logo';
 export const Footer: React.FC = React.memo(() => {
   return (
     <footer className="footer">
-      <Logo />
+      <div className="footer__container">
+        <Logo />
 
-      <FooterNav />
-      <FooterButton />
+        <FooterNav />
+        <FooterButton />
+      </div>
     </footer>
   );
 });

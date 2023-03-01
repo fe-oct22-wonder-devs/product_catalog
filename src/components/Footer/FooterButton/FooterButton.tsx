@@ -12,17 +12,17 @@ export const FooterButton: React.FC = React.memo(() => {
     >
       <button
         type="button"
-        className="footer__back-to-top"
+        className="footer__scroll-back-to-top"
         onClick={handleClickBackToTop}
       >
-        <p className="footer__link footer__link-back-to-top">
+        <p className="footer__text-back-to-top">
           Back to top
         </p>
       </button>
 
       <button
         type="button"
-        className="footer__back-to-top footer__button-back-to-top"
+        className="footer__button-back-to-top"
         onClick={handleClickBackToTop}
       >
       </button>
