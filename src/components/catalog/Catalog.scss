@@ -1,0 +1,76 @@
+@import '../../basic_styles/main.scss';
+
+.wrapper {
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+
+  @include onPhone {
+    padding: 24px 16p;
+  }
+
+  @include onTablet {
+    padding: 40px 24px;
+  };
+
+  @include onDesktop {
+    padding: 40px 32px;
+  };
+}
+
+.catalog {
+  &__list {
+  margin: 0 auto;
+  display: grid;
+  gap: 40px 16px;
+
+  @include onPhone {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @include onTablet {
+    grid-template-columns: repeat(2, 1fr);
+  };
+
+  @include onDesktop {
+    grid-template-columns: repeat(4, 1fr);
+  };
+}
+
+  &__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 506px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    @include onPhone {
+      height: 440px;
+    }
+  }
+
+  &__category {
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 56px;
+    color: #0F0F11;
+    margin-bottom: 8px;
+  }
+
+  &__quantity {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #89939A;
+    margin-bottom: 40px;
+  }
+
+  &__sort {
+    border: 1px solid #B4BDC4;
+    border-radius: 8px;
+    border-color: #B4BDC3;
+    margin-bottom: 24px;
+  }
+}
