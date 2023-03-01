@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Select from 'react-select';
 import './Catalog.scss';
 
 type Props = {
@@ -10,6 +11,22 @@ type Props = {
 };
 
 export const Catalog: React.FC<Props> = ({ products, title }) => {
+  const [selectedSort, setSelectedSort] = useState('Newest');
+  const [selectedQuantity, setSelectedQuantity] = useState('Newest');
+
+  const options = [
+    { value: 'Newest', label: 'Newest' },
+    { value: 'Oldest', label: 'Oldest' },
+    { value: 'Cheapest', label: 'Cheapest' },
+    { value: 'Most expensive', label: 'Most expensive' },
+  ];
+
+  const quantity = [
+    { value: '16', label: '16' },
+    { value: '32', label: '32' },
+    { value: '48', label: '48' },
+  ];
+
   return (
     <main className="catalog">
       <h1 className="catalog__category">
@@ -17,12 +34,18 @@ export const Catalog: React.FC<Props> = ({ products, title }) => {
       </h1>
       <p className="catalog__quantity">{`${products.length} models`}</p>
 
-      <select name="sort" className="catalog__sort">
-        <option value="Newest">Newest</option>
-        <option value="Oldest">Oldest</option>
-        <option value="Cheapest">Cheapest</option>
-        <option value="Cheapest">Most expensive</option>
-      </select>
+      <Select
+        className="catalog__select"
+        value={selectedSort}
+        onChange={event => setSelectedSort(event.target.value)}
+        options={options}
+      />
+      <Select
+        className="catalog__select"
+        value={selectedQuantity}
+        onChange={event => setSelectedQuantity(event.target.value)}
+        options={quantity}
+      />
 
       <div className="catalog__list">
         {products.map(product => (
