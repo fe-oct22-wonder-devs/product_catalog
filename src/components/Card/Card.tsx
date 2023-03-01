@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Card.scss';
+import classNames from 'classnames';
 import { Phone } from '../../types/Phone';
-import { Button } from '../Button/Button';
+import { AddToCartButton } from '../AddToCartButton/AddToCartButton';
 import testImage from './test_image.jpg';
-import favorite from './favorite.svg';
 
 type Props = {
   phone: Phone;
 };
 
 export const Card: React.FC<Props> = React.memo(({ phone }) => {
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
+  const [isAddedToFavorite, setIsAddedToFavorite] = useState(false);
+
   const {
     name,
     fullPrice,
@@ -19,6 +22,10 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
     ram,
     // image,
   } = phone;
+
+  const handleAddToCartClick = () => {
+    setIsAddedToCart(!isAddedToCart);
+  };
 
   return (
     <div className="card">
@@ -55,13 +62,14 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
       </div>
 
       <div className="card__buy">
-        <Button />
+        <AddToCartButton isAdded={isAddedToCart} onAdd={handleAddToCartClick} />
 
-        <div className="card__buy__favorite">
-          <a href="/" className="card__buy__favorite--link">
-            <img src={favorite} alt="favorite icon" className="card__buy__favorite--icon" />
-          </a>
-        </div>
+        <button
+          type="button"
+          className={classNames(!isAddedToFavorite ? 'card__buy__favorite' : 'card__buy__favorite--is-added')}
+          onClick={() => setIsAddedToFavorite(!isAddedToFavorite)}
+        >
+        </button>
       </div>
     </div>
   );

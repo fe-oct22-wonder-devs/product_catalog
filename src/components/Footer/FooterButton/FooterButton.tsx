@@ -1,5 +1,5 @@
 import React from 'react';
-import toTop from '../images/back_to_top.svg';
+// import toTop from '../images/back_to_top.svg';
 
 const handleClickBackToTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -25,10 +25,6 @@ export const FooterButton: React.FC = React.memo(() => {
         className="footer__back-to-top footer__button-back-to-top"
         onClick={handleClickBackToTop}
       >
-        <img
-          src={toTop}
-          alt="back to top"
-        />
       </button>
     </div>
   );

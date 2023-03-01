@@ -66,11 +66,18 @@
     margin-right: 16px;
   }
 
-  &____button-back-to-top {
+  &__button-back-to-top {
     display: block;
-    border-radius: 50%;
-    background-color: transparent;
-    border: none;
+    width: 32px;
+    height: 32px;
 
+    background-image: url(./images/back_to_top.svg);
+    
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-image: url(./images/back_to_top_hover.svg);
+      transform: scale(1.2);
+    }
   }
 }
