@@ -1,0 +1,95 @@
+@import '../../basic_styles/main.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  width: 270px;
+  padding: 32px;
+
+  border: 1px solid $color-elements;
+  border-radius: 8px;
+
+  &__image {
+    display: block;
+    width: 210px;
+    height: 196px;
+    margin: 0 auto 24px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $color-primary;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 8px;
+
+    &__actual {
+      margin-right: 8px;
+
+      font-style: normal;
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 140%;
+      color: $color-primary;
+    }
+
+    &__full {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 28px;
+      text-decoration-line: line-through;
+      color: $color-secondary;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    border-bottom: 1px solid $color-elements;
+    margin-bottom: 16px;
+  }
+
+  &__specs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+
+    &__text {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      color: $color-secondary;
+    }
+
+    &__value {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: $color-primary;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__buy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

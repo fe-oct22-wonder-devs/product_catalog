@@ -1,0 +1,46 @@
+@import '../../basic_styles/main.scss';
+
+.button {
+  width: 160px;
+  height: 40px;
+  background-color: $color-accent;
+
+  border: none;
+  border-radius: 8px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-white;
+
+  &:hover {
+    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+  }
+
+  &:active {
+    background-color: $color-white;
+    color: $color-accent;
+    border: 1px solid $color-elements;
+    box-shadow: none;
+  }
+}
+
+.is-added {
+  width: 180px;
+  height: 40px;
+  
+  background-color: $color-white;
+  color: $color-accent;
+  border: 1px solid $color-elements;
+  border-radius: 8px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+
+  &:hover {
+    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+  }
+}
