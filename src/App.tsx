@@ -23,9 +23,9 @@ export const App: React.FC = () => {
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/phones" element={<Phones />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/accessories" element={<Accessories />} />
           <Route path="/rights" element={<Rights />} />
           <Route path="/tablets" element={<Tablets />} />
-          <Route path="/accessories" element={<Accessories />} />
         </Routes>
       </div>
 

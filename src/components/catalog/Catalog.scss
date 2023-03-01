@@ -1,39 +1,23 @@
 @import '../../basic_styles/main.scss';
 
-.wrapper {
-  max-width: 1200px;
-  min-width: 320px;
-  margin: 0 auto;
-
-  @include onPhone {
-    padding: 24px 16p;
-  }
-
-  @include onTablet {
-    padding: 40px 24px;
-  };
-
-  @include onDesktop {
-    padding: 40px 32px;
-  };
-}
-
 .catalog {
   &__list {
   margin: 0 auto;
   display: grid;
   gap: 40px 16px;
-
-  @include onPhone {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  grid-template-columns: repeat(1, 287px);
+  justify-content: center;
 
   @include onTablet {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 288px);
+  };
+
+  @include onLaptop {
+    grid-template-columns: repeat(3, 229px);
   };
 
   @include onDesktop {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 272px);
   };
 }
 
@@ -41,15 +25,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 506px;
+    height: 440px;
+
 
     border: 1px solid #ccc;
     border-radius: 8px;
 
-    @include onPhone {
-      height: 440px;
+    @include onTablet{
+      height: 506px;
+    };
+
+    @include onLaptop{
+      height: 506px;
     }
+    
+    @include onDesktop{
+      height: 506px;
+    };
   }
+
 
   &__category {
     font-weight: 800;

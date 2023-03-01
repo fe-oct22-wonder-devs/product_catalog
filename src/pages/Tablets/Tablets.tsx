@@ -17,10 +17,12 @@ export const Tablets = () => {
   ];
 
   return (
-    <Catalog
-      products={productCards}
-      title="Tablets"
-    >
-    </Catalog>
+    <div className="wrapper">
+      <Catalog
+        products={productCards}
+        title="Tablets"
+      >
+      </Catalog>
+    </div>
   );
 };

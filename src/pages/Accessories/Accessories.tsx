@@ -17,10 +17,13 @@ export const Accessories = () => {
   ];
 
   return (
-    <Catalog
-      products={productCards}
-      title="Accessories"
-    >
-    </Catalog>
+    <div className="wrapper">
+      <Catalog
+        products={productCards}
+        title="Accessories"
+      >
+      </Catalog>
+
+    </div>
   );
 };
