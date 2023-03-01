@@ -1,9 +1,17 @@
 @import '../../basic_styles/main.scss';
 
 .button {
-  width: 160px;
+  width: 100px;
   height: 40px;
   background-color: $color-accent;
+
+  @include onTablet {
+    width: 125px;
+  }
+
+  @include onDesktop {
+    width: 160px;
+  }
 
   border: none;
   border-radius: 8px;

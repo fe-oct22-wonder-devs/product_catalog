@@ -7,17 +7,34 @@
 
   margin-right: 16px;
 
-  width: 270px;
+  width: 212px;
   padding: 32px;
 
   border: 1px solid $color-elements;
   border-radius: 8px;
 
+  @include onTablet {
+    width: 236px;
+  }
+
+  @include onDesktop {
+    width: 272px;
+  }
+
 
   &__image {
+    box-sizing: border-box;
     display: block;
-    height: 200px;
+    width: 148px;
     margin: 0 auto 24px;
+
+    @include onTablet {
+      width: 173px;
+    }
+
+    @include onDesktop {
+      width: 208px;
+    }
   }
 
   &__title {
