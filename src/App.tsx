@@ -6,7 +6,7 @@ import { PageNotFound } from './pages/PageNotFound/PageNotFound';
 import { Phones } from './pages/Phones/Phones';
 import { Tablets } from './pages/Tablets/Tablets';
 import { Accessories } from './pages/Accessories/Accessories';
-import { Header } from './components/header/Header';
+import { Header } from './components/Header/Header';
 
 export const App: React.FC = () => {
   return (
