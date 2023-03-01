@@ -32,7 +32,9 @@ export const App: React.FC = () => {
   return (
     <div className="section">
       <Header />
+
       <Card phone={phoneFromServer} />
+
       <div className="container">
         <Routes>
           <Route path="*" element={<PageNotFound />} />
@@ -45,6 +47,7 @@ export const App: React.FC = () => {
           <Route path="/accessories" element={<Accessories />} />
         </Routes>
       </div>
+
       <Footer />
     </div>
   );

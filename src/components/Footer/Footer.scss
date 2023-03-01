@@ -49,8 +49,14 @@
 
   &__back-to-top {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    padding: 0;
+
+    background-color: $color-white;
+    border: none;
+
+    cursor: pointer;
   }
 
   &__link-back-to-top {
@@ -58,10 +64,13 @@
     text-align: center;
 
     margin-right: 16px;
+  }
 
-    // &::after {
-    //   content: url(./images/back_to_top.svg);
+  &____button-back-to-top {
+    display: block;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
 
-    // }
   }
 }

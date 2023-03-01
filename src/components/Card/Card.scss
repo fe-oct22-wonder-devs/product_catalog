@@ -3,6 +3,9 @@
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+  margin-right: 16px;
 
   width: 270px;
   padding: 32px;
@@ -10,10 +13,10 @@
   border: 1px solid $color-elements;
   border-radius: 8px;
 
+
   &__image {
     display: block;
-    width: 210px;
-    height: 196px;
+    height: 200px;
     margin: 0 auto 24px;
   }
 
