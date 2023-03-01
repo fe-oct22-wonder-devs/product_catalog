@@ -2,11 +2,14 @@
 
 .catalog {
   &__list {
-  margin: 0 auto;
   display: grid;
+
   gap: 40px 16px;
   grid-template-columns: repeat(1, 287px);
   justify-content: center;
+
+  margin: 0 auto;
+
 
   @include onTablet {
     grid-template-columns: repeat(2, 288px);
@@ -25,8 +28,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 440px;
 
+    height: 440px;
 
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -53,18 +56,15 @@
     margin-bottom: 8px;
   }
 
-  &__quantity {
-    font-weight: 600;
+  &__select {
+    display: inline-block;
+
+    width: 136px;
+    height: 40px;
+    font-weight: 700;
     font-size: 14px;
     line-height: 21px;
-    color: #89939A;
-    margin-bottom: 40px;
-  }
-
-  &__sort {
-    border: 1px solid #B4BDC4;
-    border-radius: 8px;
-    border-color: #B4BDC3;
+    margin-right: 16px;
     margin-bottom: 24px;
   }
 }
