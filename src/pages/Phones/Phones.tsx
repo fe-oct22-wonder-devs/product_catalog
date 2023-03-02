@@ -21,7 +21,7 @@ export const Phones = () => {
 
   useEffect(() => {
     getPhonesFromServer();
-  });
+  }, []);
 
   return (
     <div className="wrapper">
