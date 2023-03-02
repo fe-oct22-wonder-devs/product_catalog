@@ -1,20 +1,6 @@
-const BASE_URL = 'https://productcatalogapi-production-840a.up.railway.app';
+import { Phone } from '../types/Phone';
 
-export type Phone = {
-  id: string,
-  category: string,
-  phoneId: string,
-  itemId: string,
-  name: string,
-  fullPrice: number,
-  price: number,
-  screen: string,
-  capacity: string,
-  color: string,
-  ram: string,
-  year: number,
-  image: string
-};
+const BASE_URL = 'https://productcatalogapi-production-840a.up.railway.app';
 
 type QueryParams = {
   page?: string,
