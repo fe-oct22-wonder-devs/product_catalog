@@ -1,0 +1,13 @@
+@import '../../basic_styles/main.scss';
+
+.wrapper {
+  @include mainWrapper;
+
+  @include onLaptop; @include onTablet {
+    padding: 40px 24px;
+  };
+
+  @include onDesktop {
+    padding: 40px 32px;
+  };
+}
