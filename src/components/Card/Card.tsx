@@ -3,7 +3,7 @@ import './Card.scss';
 import classNames from 'classnames';
 import { Phone } from '../../types/Phone';
 import { AddToCartButton } from '../AddToCartButton/AddToCartButton';
-import testImage from './test_image.jpg';
+// import testImage from './test_image.jpg';
 
 type Props = {
   phone: Phone;
@@ -20,7 +20,7 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
     screen,
     capacity,
     ram,
-    // image,
+    image,
   } = phone;
 
   const handleAddToCartClick = () => {
@@ -31,7 +31,7 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
     <div className="card">
       <img
         className="card__image"
-        src={testImage}
+        src={image}
         alt={name}
       />
 
