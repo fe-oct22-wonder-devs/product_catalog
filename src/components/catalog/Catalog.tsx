@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
+import { Phone } from '../../types/Phone';
+import { Card } from '../Card/Card';
 import './Catalog.scss';
 
 type Props = {
-  products: {
-    id: number,
-    name: string,
-  }[],
+  products: Phone[],
   title: string;
 };
 
@@ -49,9 +48,7 @@ export const Catalog: React.FC<Props> = ({ products, title }) => {
 
       <div className="catalog__list">
         {products.map(product => (
-          <div className="catalog__card" key={product.id}>
-            {product.name}
-          </div>
+          <Card phone={product} key={product.id} />
         ))}
       </div>
     </main>

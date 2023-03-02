@@ -1,6 +1,6 @@
 import React from 'react';
-import { Catalog } from '../../components/catalog/Catalog';
 import './Accessories.scss';
+import { Catalog } from '../../components/catalog/Catalog';
 
 export const Accessories = () => {
   const productCards = [
