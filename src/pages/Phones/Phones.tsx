@@ -8,7 +8,7 @@ export const Phones = () => {
     <div className="wrapper">
       <Catalog
         products={phonesFromServer}
-        title="Mobile phones"
+        title="Mobie phones"
       >
       </Catalog>
     </div>
