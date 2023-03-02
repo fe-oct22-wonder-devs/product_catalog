@@ -5,6 +5,8 @@ const handleClickBackToTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 };
 
+// footer
+
 export const FooterButton: React.FC = React.memo(() => {
   return (
     <div
