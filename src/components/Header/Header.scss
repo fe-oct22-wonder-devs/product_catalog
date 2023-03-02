@@ -40,6 +40,8 @@
 
   &__icon,
   &__menu {
+    height: 48px;
+    width: 48px;
     padding: 16px;
     background: $color-white;
     box-shadow: -1px 0px 0px $color-elements;
@@ -50,6 +52,8 @@
     }
 
     @include onDesktop {
+      height: 64px;
+      width: 64px;
       padding: 24px;
     }
   }
@@ -64,17 +68,16 @@
 }
 
 .nav {
-  display: none;
   margin-right: auto;
 
-  @include onTablet {
-    display: block;
-  }
-
   &__list {
-    display: flex;
+    display: none;
     margin: 0;
     padding: 0;
+
+    @include onTablet {
+      display: flex;
+    }
   }
 
   &__item {
@@ -92,24 +95,24 @@
   }
 
   &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $color-secondary;
+
     @include onTablet {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       height: 48px;
+    }
 
-      @include onDesktop {
-        height: 64px;
-      }
-
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 11px;
-      letter-spacing: 0.04em;
-      text-align: center;
-      text-transform: uppercase;
-      color: $color-secondary;
+    @include onDesktop {
+      height: 64px;
     }
 
     &:hover {

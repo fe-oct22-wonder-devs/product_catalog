@@ -6,7 +6,11 @@ import favourites from './Icons/favourites.svg';
 import cart from './Icons/cart.svg';
 import menu from './Icons/menu.svg';
 
-export const Header: React.FC = memo(() => {
+interface Props {
+  toggleMenu: () => void
+}
+
+export const Header: React.FC<Props> = memo(({ toggleMenu }) => {
   return (
     <header className="header">
       <a href="/" className="header__logo-link">
@@ -58,11 +62,16 @@ export const Header: React.FC = memo(() => {
         />
       </section>
 
-      <img
-        className="header__menu"
-        src={menu}
-        alt="menu"
-      />
+      <button
+        type="button"
+        onClick={toggleMenu}
+      >
+        <img
+          className="header__menu"
+          src={menu}
+          alt="menu"
+        />
+      </button>
     </header>
   );
 });
