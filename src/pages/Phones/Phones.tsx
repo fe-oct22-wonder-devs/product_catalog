@@ -20,7 +20,7 @@ export const Phones = () => {
   return (
     <Catalog
       products={phonesFromServer}
-      title="Mobie phones"
+      title="Mobile phones"
     >
     </Catalog>
   );
