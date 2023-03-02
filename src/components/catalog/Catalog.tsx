@@ -7,17 +7,18 @@ import './Catalog.scss';
 type Props = {
   products: Phone[],
   title: string;
+  isLoading: boolean;
 };
 
-export const Catalog: React.FC<Props> = ({ products, title }) => {
-  const [selectedSort, setSelectedSort] = useState('Newest');
-  const [selectedQuantity, setSelectedQuantity] = useState('Newest');
+export const Catalog: React.FC<Props> = ({ products, title, isLoading }) => {
+  const [selectedSort, setSelectedSort] = useState(null);
+  const [selectedQuantity, setSelectedQuantity] = useState(null);
 
   const options = [
-    { value: 'Newest', label: 'Newest' },
-    { value: 'Oldest', label: 'Oldest' },
-    { value: 'Cheapest', label: 'Cheapest' },
-    { value: 'Most expensive', label: 'Most expensive' },
+    { value: 'date_asc', label: 'Newest' },
+    { value: 'date_desc', label: 'Oldest' },
+    { value: 'price_asc', label: 'Cheapest' },
+    { value: 'price_desc', label: 'Most expensive' },
   ];
 
   const quantity = [
@@ -46,11 +47,13 @@ export const Catalog: React.FC<Props> = ({ products, title }) => {
         options={quantity}
       />
 
-      <div className="catalog__list">
-        {products.map(product => (
-          <Card phone={product} key={product.id} />
-        ))}
-      </div>
+      {!isLoading && (
+        <div className="catalog__list">
+          {products.map(product => (
+            <Card phone={product} key={product.id} />
+          ))}
+        </div>
+      )}
     </main>
   );
 };
