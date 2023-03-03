@@ -1,28 +1,29 @@
 {
   "files": {
-    "main.css": "./static/css/main.f2c84cd5.chunk.css",
-    "main.js": "./static/js/main.6a97fb3f.chunk.js",
-    "main.js.map": "./static/js/main.6a97fb3f.chunk.js.map",
+    "main.css": "./static/css/main.b671c1e0.chunk.css",
+    "main.js": "./static/js/main.6aad44d5.chunk.js",
+    "main.js.map": "./static/js/main.6aad44d5.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8c9895b1.js",
     "runtime-main.js.map": "./static/js/runtime-main.8c9895b1.js.map",
-    "static/js/2.41adc150.chunk.js": "./static/js/2.41adc150.chunk.js",
-    "static/js/2.41adc150.chunk.js.map": "./static/js/2.41adc150.chunk.js.map",
+    "static/js/2.c73c2aa2.chunk.js": "./static/js/2.c73c2aa2.chunk.js",
+    "static/js/2.c73c2aa2.chunk.js.map": "./static/js/2.c73c2aa2.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.f2c84cd5.chunk.css.map": "./static/css/main.f2c84cd5.chunk.css.map",
-    "static/js/2.41adc150.chunk.js.LICENSE.txt": "./static/js/2.41adc150.chunk.js.LICENSE.txt",
-    "static/media/NiceGadgets.0c7aed4b.svg": "./static/media/NiceGadgets.0c7aed4b.svg",
+    "static/css/main.b671c1e0.chunk.css.map": "./static/css/main.b671c1e0.chunk.css.map",
+    "static/js/2.c73c2aa2.chunk.js.LICENSE.txt": "./static/js/2.c73c2aa2.chunk.js.LICENSE.txt",
+    "static/media/NiceGadgets-dark.0d919534.svg": "./static/media/NiceGadgets-dark.0d919534.svg",
+    "static/media/NiceGadgets.c8e37169.svg": "./static/media/NiceGadgets.c8e37169.svg",
     "static/media/Pagination.scss": "./static/media/arrow_right.bf3a1891.svg",
     "static/media/Footer.scss": "./static/media/back_to_top_hover.54b6b059.svg",
-    "static/media/cart.df23e4fb.svg": "./static/media/cart.df23e4fb.svg",
+    "static/media/Header.scss": "./static/media/favourites.a8d9e134.svg",
+    "static/media/close.cdfb6ae5.svg": "./static/media/close.cdfb6ae5.svg",
     "static/media/Card.scss": "./static/media/favorite_hover.928c1dbc.svg",
-    "static/media/favourites.a8d9e134.svg": "./static/media/favourites.a8d9e134.svg",
     "static/media/footer__logo.a5488e09.svg": "./static/media/footer__logo.a5488e09.svg",
     "static/media/menu.3f3c3f2f.svg": "./static/media/menu.3f3c3f2f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8c9895b1.js",
-    "static/js/2.41adc150.chunk.js",
-    "static/css/main.f2c84cd5.chunk.css",
-    "static/js/main.6a97fb3f.chunk.js"
+    "static/js/2.c73c2aa2.chunk.js",
+    "static/css/main.b671c1e0.chunk.css",
+    "static/js/main.6aad44d5.chunk.js"
   ]
 }
