@@ -1,4 +1,5 @@
-@import '../../styles/main.scss';
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
 
 .button {
   width: 100px;
@@ -45,7 +46,7 @@
   @include onDesktop {
     width: 160px;
   }
-  
+
   background-color: $color-white;
   color: $color-accent;
   border: 1px solid $color-elements;
