@@ -3,7 +3,7 @@ import './Pagination.scss';
 
 type Props = {
   perPage: string,
-  totalCards: number,
+  totalCards: number | undefined,
   currentPage: string,
   onPageChange: (newPage: number) => void;
 };
@@ -14,11 +14,14 @@ export const Pagination: React.FC<Props> = ({
   perPage,
   currentPage,
 }) => {
-  const totalPages = Math.ceil(totalCards / +perPage);
   const pageNumbers = [];
 
-  for (let i = 1; i <= totalPages; i += 1) {
-    pageNumbers.push(i);
+  if (totalCards) {
+    const totalPages = Math.ceil(totalCards / +perPage);
+
+    for (let i = 1; i <= totalPages; i += 1) {
+      pageNumbers.push(i);
+    }
   }
 
   return (
