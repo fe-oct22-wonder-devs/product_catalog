@@ -17,6 +17,8 @@
 }
 
 @mixin mainWrapper {
+  min-height: 80vh;
+  height: 100%;
   max-width: 1200px;
   min-width: 320px;
   margin: 0 auto;
