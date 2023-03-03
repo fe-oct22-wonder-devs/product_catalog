@@ -28,19 +28,19 @@ export const Pagination: React.FC<Props> = ({
     <div className="pagination">
       <button
         type="button"
-        className="pag-buttons pag-buttons__arrow pag-buttons__arrow--left"
+        className="pagination-buttons pagination-buttons__arrow pagination-buttons__arrow--left"
         onClick={() => {
           onPageChange(+currentPage > 1 ? +currentPage - 1 : +currentPage);
         }}
       >
       </button>
 
-      <div className="pag-list">
+      <div className="pagination-list">
         {pageNumbers.map(pageNumber => (
           <button
             type="button"
             key={pageNumber}
-            className="pag-buttons pag-list__item pag-list__item--link "
+            className="pagination-buttons  "
             onClick={() => onPageChange(pageNumber)}
           >
             {pageNumber}
@@ -50,7 +50,7 @@ export const Pagination: React.FC<Props> = ({
 
       <button
         type="button"
-        className="pag-buttons pag-buttons__arrow pag-buttons__arrow--right"
+        className="pagination-buttons pagination-buttons__arrow pagination-buttons__arrow--right"
         onClick={() => {
           onPageChange(+currentPage ? +currentPage + 1 : +currentPage);
         }}

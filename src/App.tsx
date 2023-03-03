@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import './styles/main.scss';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home/Home';
@@ -27,7 +28,8 @@ export const App: React.FC = () => {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/rights" element={<Rights />} />
           <Route path="/tablets" element={<Tablets />} />
-          <Route path="/tablets/" element={<Tablets />} />
+          <Route path="/phones" element={<Phones />} />
+
         </Routes>
       </div>
 
