@@ -19,9 +19,9 @@ type Props = {
 };
 
 export const sortOptions = [
-  { value: 'Newest', label: 'Newest' },
-  { value: 'Alphabetically', label: 'Alphabetically' },
-  { value: 'Cheapest', label: 'Cheapest' },
+  { value: 'newest', label: 'Newest' },
+  { value: 'alphabetically', label: 'Alphabetically' },
+  { value: 'cheapest', label: 'Cheapest' },
 ];
 
 export const perPageOptions = [
@@ -45,7 +45,7 @@ export const Catalog: React.FC<Props> = ({
       </h1>
       <p className="catalog__quantity">{`${products?.length} models`}</p>
       <div className="catalog__sort">
-        <p className="catalog__sort--name">models</p>
+        <p className="catalog__sort--name">Sort by</p>
         <Select
           placeholder={selectedSort}
           className="catalog__select"
@@ -53,10 +53,19 @@ export const Catalog: React.FC<Props> = ({
           onChange={(newValue: SingleValue<SelectOptionType>) => onSortChange(newValue)}
           isMulti={false}
           options={sortOptions}
+          theme={(theme) => ({
+            ...theme,
+            borderRadius: 8,
+            colors: {
+              ...theme.colors,
+              neutral0: 'grey',
+              neutral5: 'black',
+            },
+          })}
         />
       </div>
       <div className="catalog__sort">
-        <p className="catalog__sort--name">models</p>
+        <p className="catalog__sort--name">Items on page</p>
         <Select
           placeholder={selectedPerPage}
           className="catalog__select"

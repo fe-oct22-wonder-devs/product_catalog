@@ -74,7 +74,7 @@ export const Accessories = () => {
         selectedPerPage={selectedQuantity}
         selectedSort={selectedSort}
         products={accessoriesFromServer}
-        title="Mobile phones"
+        title="Accessories"
         onSortChange={(value: SelectOptionType | null) => sortChangeHandler(value)}
         onQuantityChange={(value: SelectOptionType | null) => perPageChangeHandler(value)}
       />
