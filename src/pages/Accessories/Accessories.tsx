@@ -1,39 +1,349 @@
-import React, { useEffect, useState } from 'react';
-
-import axios from 'axios';
+import React, { useState } from 'react';
+import { getPhonesPagination } from '../../api/phones';
 import { Pagination } from '../../components/pagination/Pagination';
-import './Accessories.scss';
 import { Catalog } from '../../components/catalog/Catalog';
+import { Phone } from '../../types/Phone';
+import './Accessories.scss';
+
+const defaultQuantity = '16';
+
+const arr = [
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+  {
+    id: 'string',
+    category: 'string',
+    phoneId: 'string',
+    itemId: 'string',
+    name: 'string',
+    fullPrice: 234,
+    price: 234,
+    screen: 'string',
+    capacity: 'string',
+    color: 'string',
+    ram: 'string',
+    year: 234,
+    image: 'string',
+  },
+];
 
 export const Accessories = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [cards, setCards] = useState([]);
+  const [accessoriesFromServer, setAccessoriesFromServer] = useState<Phone[]>(arr);
+  const [currentPage, setCurrentPage] = useState('1');
+  const [selectedSort, setSelectedSort] = useState<string | null>(null);
+  const [selectedQuantity, setSelectedQuantity] = useState<string | null>(defaultQuantity);
 
-  useEffect(() => {
-    const fetchCards = async () => {
-      setIsLoading(true);
-      const res = await axios.get('https://productcatalogapi-production-840a.up.railway.app/phones');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  async function getAccessoriesFromServer() {
+    let accessories = await getPhonesPagination({
+      page: currentPage,
+      perPage: selectedQuantity ?? undefined,
+      sort: selectedSort || 'Newest',
+    });
 
-      setCards(res.data);
-      setIsLoading(false);
-    };
+    accessories = arr;
 
-    fetchCards();
-  }, []);
+    setAccessoriesFromServer(accessories);
+  }
 
   return (
     <div className="wrapper">
       <Catalog
-        isLoading={isLoading}
-        products={cards}
-        title="Accessories"
-      >
-      </Catalog>
+        selectedPerPage={selectedQuantity}
+        selectedSort={selectedSort}
+        products={accessoriesFromServer}
+        title="Mobile phones"
+        onSortChange={(value) => setSelectedSort(value)}
+        onQuantityChange={(value) => setSelectedQuantity(value)}
+      />
       <Pagination
-        perPage={17}
-        totalCards={33}
-        currentPage={2}
-        onPageChange={(value) => value}
+        totalCards={accessoriesFromServer.length}
+        perPage={selectedQuantity || defaultQuantity}
+        onPageChange={(value) => setCurrentPage(value.toString())}
+        currentPage={currentPage}
       />
 
     </div>

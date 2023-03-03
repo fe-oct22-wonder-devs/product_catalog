@@ -1,28 +1,49 @@
-import React from 'react';
-import './Tablets.scss';
+import React, { useEffect, useState } from 'react';
+import { getPhonesPagination } from '../../api/phones';
+import { Pagination } from '../../components/pagination/Pagination';
 import { Catalog } from '../../components/catalog/Catalog';
+import { Phone } from '../../types/Phone';
+import './Tablets.scss';
+
+const defaultQuantity = '16';
 
 export const Tablets = () => {
-  const productCards = [
-    { name: 'Product card', id: 1 },
-    { name: 'Product card', id: 2 },
-    { name: 'Product card', id: 3 },
-    { name: 'Product card', id: 4 },
-    { name: 'Product card', id: 5 },
-    { name: 'Product card', id: 6 },
-    { name: 'Product card', id: 7 },
-    { name: 'Product card', id: 8 },
-    { name: 'Product card', id: 9 },
-    { name: 'Product card', id: 10 },
-  ];
+  const [tabletsFromServer, setTabletsFromServer] = useState<Phone[]>([]);
+  const [currentPage, setCurrentPage] = useState('1');
+  const [selectedSort, setSelectedSort] = useState<string | null>('Newest');
+  const [selectedQuantity, setSelectedQuantity] = useState<string | null>(defaultQuantity);
+
+  async function getTabletsFromServer() {
+    const tablets = await getPhonesPagination({
+      page: currentPage,
+      perPage: selectedQuantity ?? undefined,
+      sort: selectedSort || '1',
+    });
+
+    setTabletsFromServer(tablets);
+  }
+
+  useEffect(() => {
+    getTabletsFromServer();
+  }, []);
 
   return (
     <div className="wrapper">
       <Catalog
-        products={productCards}
-        title="Tablets"
-      >
-      </Catalog>
+        selectedPerPage={selectedQuantity}
+        selectedSort={selectedSort}
+        products={tabletsFromServer}
+        title="Mobile phones"
+        onSortChange={(value) => setSelectedSort(value)}
+        onQuantityChange={(value) => setSelectedQuantity(value)}
+      />
+      <Pagination
+        totalCards={tabletsFromServer.length}
+        perPage={selectedQuantity || defaultQuantity}
+        onPageChange={(value) => setCurrentPage(value.toString())}
+        currentPage={currentPage}
+      />
+
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Select from 'react-select';
+import React from 'react';
+import Select, { SingleValue } from 'react-select';
 import { Phone } from '../../types/Phone';
 import { Card } from '../Card/Card';
 import './Catalog.scss';
@@ -7,18 +7,24 @@ import './Catalog.scss';
 type Props = {
   products: Phone[],
   title: string;
-  isLoading: boolean;
+  selectedSort: string | null;
+  selectedPerPage: string | null;
+  onSortChange: (selectedSort: string | null) => void;
+  onQuantityChange: (setSelectedQuantity: string | null) => void;
 };
 
-export const Catalog: React.FC<Props> = ({ products, title, isLoading }) => {
-  const [selectedSort, setSelectedSort] = useState(null);
-  const [selectedQuantity, setSelectedQuantity] = useState(null);
-
-  const options = [
+export const Catalog: React.FC<Props> = ({
+  products,
+  title,
+  selectedPerPage,
+  selectedSort,
+  onSortChange,
+  onQuantityChange,
+}) => {
+  const sort = [
     { value: 'date_asc', label: 'Newest' },
-    { value: 'date_desc', label: 'Oldest' },
+    { value: 'alphabet_desc', label: 'Alphabetically' },
     { value: 'price_asc', label: 'Cheapest' },
-    { value: 'price_desc', label: 'Most expensive' },
   ];
 
   const quantity = [
@@ -37,23 +43,24 @@ export const Catalog: React.FC<Props> = ({ products, title, isLoading }) => {
       <Select
         className="catalog__select"
         value={selectedSort}
-        onChange={event => setSelectedSort(event.target.value)}
-        options={options}
+        onChange={(newValue: SingleValue<string>) => onSortChange(newValue)}
+        isMulti={false}
+        options={sort}
       />
       <Select
         className="catalog__select"
-        value={selectedQuantity}
-        onChange={event => setSelectedQuantity(event.target.value)}
+        value={selectedPerPage}
+        onChange={(newValue: SingleValue<string>) => onQuantityChange(newValue)}
+        isMulti={false}
         options={quantity}
       />
 
-      {!isLoading && (
-        <div className="catalog__list">
-          {products.map(product => (
-            <Card phone={product} key={product.id} />
-          ))}
-        </div>
-      )}
+      <div className="catalog__list">
+        {products.map(product => (
+          <Card phone={product} key={product.id} />
+        ))}
+      </div>
+
     </main>
   );
 };
