@@ -8,9 +8,9 @@ import { Phones } from './pages/Phones/Phones';
 import { Tablets } from './pages/Tablets/Tablets';
 import { Accessories } from './pages/Accessories/Accessories';
 import { Header } from './components/Header/Header';
-import { BurgerMenu } from './components/BurgerMenu/BurgerMenu';
 import { Contacts } from './pages/Contacts/Contacts';
 import { Rights } from './pages/Rights/Rights';
+import { BurgerMenu } from './components/BurgerMenu/BurgerMenu';
 
 export const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,6 +34,7 @@ export const App: React.FC = () => {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/rights" element={<Rights />} />
           <Route path="/tablets" element={<Tablets />} />
+          <Route path="/tablets/" element={<Tablets />} />
         </Routes>
       </div>
 

@@ -1,10 +1,10 @@
 import React, { memo, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './BurgerMenu.scss';
-import darkLogo from './Logo/NiceGadgets-dark.svg';
-import favourites from './Icons/favourites.svg';
-import cart from './Icons/cart.svg';
-import close from './Icons/close.svg';
+import darkLogo from '../../img/Logo/NiceGadgets-dark.svg';
+import favourites from '../../img/icons/favourites.svg';
+import cart from '../../img/icons/cart.svg';
+import close from '../../img/icons/close.svg';
 
 interface Props {
   toggleMenu: () => void,

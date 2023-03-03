@@ -5,6 +5,12 @@
   align-items: center;
   justify-content: space-between;
 
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
   height: 48px;
   padding: 13px 0px 13px 16px;
 
@@ -34,11 +40,50 @@
     white-space: nowrap;
 
     @include onTablet {
-      display: block;
+      display: flex;
     }
   }
 
-  &__icon,
+  &__icon_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 48px;
+    height: 48px;
+    box-shadow: -1px 0px 0px #E2E6E9;
+
+    &:hover {
+      .header__icon {
+        transform: scale(1.2);
+      }
+    }
+
+    @include onDesktop {
+      height: 64px;
+      width: 64px;
+    }
+  }
+
+  &__icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 15px;
+    height: 15px;
+
+    transition: all 0.3s ease;
+  }
+
+  &__icon--favourites {
+    background-image: url('../../img/icons/favourites.svg');
+  }
+
+  &__icon--cart {
+    background-image: url('../../img/icons/cart.svg');
+  }
+
+
   &__menu {
     height: 48px;
     width: 48px;
@@ -46,6 +91,7 @@
     background: $color-white;
     box-shadow: -1px 0px 0px $color-elements;
     cursor: pointer;
+    transition: all 0.3s ease;
 
     &:hover {
       opacity: 0.5;
