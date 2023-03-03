@@ -1,12 +1,16 @@
 import React, { memo } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
-import logo from './Logo/NiceGadgets.svg';
-import favourites from './Icons/favourites.svg';
-import cart from './Icons/cart.svg';
-import menu from './Icons/menu.svg';
+import logo from '../../img/Logo/NiceGadgets.svg';
+// import favourites from '../../img/Icons/favourites.svg';
+// import cart from '../../img/Icons/cart.svg';
+import menu from '../../img/icons/menu.svg';
 
-export const Header: React.FC = memo(() => {
+interface Props {
+  toggleMenu: () => void
+}
+
+export const Header: React.FC<Props> = memo(({ toggleMenu }) => {
   return (
     <header className="header">
       <a href="/" className="header__logo-link">
@@ -46,23 +50,30 @@ export const Header: React.FC = memo(() => {
       </nav>
 
       <section className="header__icons">
-        <img
-          className="header__icon"
-          src={favourites}
-          alt="favourites"
-        />
-        <img
-          className="header__icon"
-          src={cart}
-          alt="cart"
-        />
+        <Link
+          to="/favorite"
+          className="header__icon_link"
+        >
+          <div className="header__icon header__icon--favourites"></div>
+        </Link>
+        <Link
+          to="/cart"
+          className="header__icon_link"
+        >
+          <div className="header__icon header__icon--cart"></div>
+        </Link>
       </section>
 
-      <img
-        className="header__menu"
-        src={menu}
-        alt="menu"
-      />
+      <button
+        type="button"
+        onClick={toggleMenu}
+      >
+        <img
+          className="header__menu"
+          src={menu}
+          alt="menu"
+        />
+      </button>
     </header>
   );
 });

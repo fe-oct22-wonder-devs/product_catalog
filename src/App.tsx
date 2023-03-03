@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.scss';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Footer } from './components/Footer';
@@ -10,19 +10,26 @@ import { Accessories } from './pages/Accessories/Accessories';
 import { Header } from './components/Header/Header';
 import { Contacts } from './pages/Contacts/Contacts';
 import { Rights } from './pages/Rights/Rights';
+import { BurgerMenu } from './components/BurgerMenu/BurgerMenu';
 
 export const App: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen(!isMenuOpen);
+  }, [isMenuOpen]);
+
   return (
     <div className="section">
-      <Header />
-
+      {isMenuOpen
+        ? <BurgerMenu toggleMenu={toggleMenu} />
+        : <Header toggleMenu={toggleMenu} />}
       <div className="container">
         <Routes>
           <Route path="*" element={<PageNotFound />} />
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
-          <Route path="/phones" element={<Phones />}>
-          </Route>
+          <Route path="/phones" element={<Phones />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/rights" element={<Rights />} />
