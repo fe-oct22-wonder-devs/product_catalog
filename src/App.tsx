@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import './App.scss';
-import './styles/main.scss';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home/Home';

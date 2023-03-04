@@ -1,9 +1,10 @@
-@import '../../styles/main.scss';
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
 
 .footer {
   border: 2px solid #E2E6E9;
   box-shadow: 0px -1px 0px #E2E6E9;
-  
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -21,7 +22,7 @@
       justify-content: space-between;
       padding: 0 32px;
     }
-    
+
     @include onDesktop {
       height: 96px;
       flex-direction: row;
@@ -41,7 +42,7 @@
     margin-bottom: 32px;
 
     gap: 16px;
-   
+
 
     @include onDesktop {
       flex-direction: row;
@@ -56,9 +57,9 @@
     }
 
     line-height: 11px;
-    
+
   }
-  
+
   &__link {
     display: block;
 
@@ -71,7 +72,7 @@
     text-align: center;
     text-transform: uppercase;
     color: $color-secondary;
-  
+
     transition: all 0.3s ease-in-out;
 
     &:hover {
@@ -85,7 +86,7 @@
     }
 
   }
-  
+
   &__logo-link {
     display: block;
     width: 90px;
@@ -106,7 +107,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     margin: 0 auto;
 
     @include onDesktop {
@@ -122,7 +123,7 @@
 
   &__scroll-back-to-top {
     padding: 0;
-    
+
     background-color: $color-white;
     border: none;
   }
@@ -137,9 +138,9 @@
     letter-spacing: 0.04em;
     text-align: center;
     color: $color-secondary;
-  
+
     transition: all 0.3s ease-in-out;
-    
+
     &:hover {
       color: $color-primary;
     }
@@ -155,7 +156,7 @@
     border: none;
 
     background-image: url(./images/back_to_top.svg);
-    
+
     transition: all 0.3s ease;
 
     &:hover {
