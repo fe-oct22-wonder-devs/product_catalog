@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CartItem } from '../../components/CartItem/CartItem';
+import { ModalWindow } from '../../components/ModalWindow/ModalWIndow';
 import { Phone } from '../../types/Phone';
 import './Cart.scss';
 
@@ -56,7 +57,18 @@ const addedPhones: Phone[] = [
 ];
 
 export const Cart: React.FC = () => {
+  const [isModalOpened, setIsModalOpened] = useState(false);
+
   const totalAmount = addedPhones.reduce((acc, phone) => (acc + phone.price), 0);
+
+  const handleCheckoutClick = () => {
+    setIsModalOpened(true);
+
+    setTimeout(() => {
+      setIsModalOpened(false);
+      window.location.replace('https://fe-oct22-wonder-devs.github.io/product_catalog/');
+    }, 1500);
+  };
 
   return (
     <div className="wrapper">
@@ -80,11 +92,16 @@ export const Cart: React.FC = () => {
           <button
             type="button"
             className="cart__cashout--button"
+            onClick={handleCheckoutClick}
           >
             Checkout
           </button>
         </div>
       </div>
+
+      {isModalOpened && (
+        <ModalWindow />
+      )}
     </div>
   );
 };
