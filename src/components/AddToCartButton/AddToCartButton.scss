@@ -37,6 +37,14 @@
 .is-added {
   width: 160px;
   height: 40px;
+
+  @include onTablet {
+    width: 125px;
+  }
+
+  @include onDesktop {
+    width: 160px;
+  }
   
   background-color: $color-white;
   color: $color-accent;

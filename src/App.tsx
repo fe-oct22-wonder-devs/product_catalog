@@ -11,6 +11,7 @@ import { Accessories } from './pages/Accessories/Accessories';
 import { Header } from './components/Header/Header';
 import { Contacts } from './pages/Contacts/Contacts';
 import { Rights } from './pages/Rights/Rights';
+import { Cart } from './pages/Cart/Cart';
 import { BurgerMenu } from './components/BurgerMenu/BurgerMenu';
 
 export const App: React.FC = () => {
@@ -35,8 +36,7 @@ export const App: React.FC = () => {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/rights" element={<Rights />} />
           <Route path="/tablets" element={<Tablets />} />
-          <Route path="/phones" element={<Phones />} />
-
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
 

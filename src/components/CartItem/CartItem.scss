@@ -1,0 +1,159 @@
+@import '../../basic_styles/main.scss';
+
+.cart-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  height: 160px;
+  width: 288px;
+  padding: 16px;
+
+  border: 1px solid $color-elements;
+  border-radius: 16px;
+
+  margin-bottom: 16px;
+
+  @include onTablet {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 592px;
+    height: 128px;
+    padding: 24px;
+  }
+
+  @include onDesktop {
+    width: 752px;
+  }
+
+  &__info-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 16px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      margin-right: 24px;
+    }
+  }
+
+  &__price-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    &--decrease {
+      width: 32px;
+      height: 32px;
+
+      margin-right: 14px;
+
+      background-image: url(./decrease_disabled.svg);
+
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &--amount-counter {
+      margin-right: 14px;
+
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+
+      text-align: center;
+    }
+
+    &--increase {
+      width: 32px;
+      height: 32px;
+
+      background-image: url(./increase.svg);
+
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &--price {
+      font-style: normal;
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 140%;
+
+      color: $color-primary;
+    }
+  }
+
+  &__amount-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__remove-button {
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    border: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+    background-color: transparent;
+    background-image: url(./Closecross.png);
+    background-position: center;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__image-container {
+    width: 80px;
+    height: 80px;
+    padding: 7px;
+    margin-right: 16px;
+  }
+
+  &__image {
+    display: block;
+    width: 66px;
+    height: 66px;
+  }
+
+  &__title {
+    display: block;
+    width: 128px;
+
+    @include onTablet {
+      width: 176px;
+    }
+
+    @include onDesktop {
+      width: 336px;
+    }
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    
+    color: $color-primary;
+  }
+}
