@@ -5,22 +5,10 @@
   flex-direction: column;
   justify-content: center;
 
-  // width: 212px;
-  // height: 440px;
   padding: 32px;
 
   border: 1px solid $color-elements;
   border-radius: 8px;
-
-  @include onTablet {
-    // width: 236px;
-    // height: 506px;
-  }
-
-  @include onDesktop {
-    // width: 272px;
-  }
-
 
   &__image {
     box-sizing: border-box;
