@@ -3,6 +3,8 @@ import './Card.scss';
 import classNames from 'classnames';
 import { Phone } from '../../types/Phone';
 import { AddToCartButton } from '../AddToCartButton/AddToCartButton';
+import { useAppDispatch } from '../../store/hooks';
+import { addToCart } from '../../store/cart/cartSlice';
 
 type Props = {
   phone: Phone;
@@ -11,6 +13,7 @@ type Props = {
 export const Card: React.FC<Props> = React.memo(({ phone }) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [isAddedToFavorite, setIsAddedToFavorite] = useState(false);
+  const dispatch = useAppDispatch();
 
   const {
     name,
@@ -24,6 +27,7 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
 
   const handleAddToCartClick = () => {
     setIsAddedToCart(!isAddedToCart);
+    dispatch(addToCart(phone));
   };
 
   return (
