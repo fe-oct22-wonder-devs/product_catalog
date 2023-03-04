@@ -5,33 +5,31 @@
   flex-direction: column;
   justify-content: center;
 
-  width: 212px;
+  // width: 212px;
+  // height: 440px;
   padding: 32px;
 
   border: 1px solid $color-elements;
   border-radius: 8px;
 
   @include onTablet {
-    width: 236px;
+    // width: 236px;
+    // height: 506px;
   }
 
   @include onDesktop {
-    width: 272px;
+    // width: 272px;
   }
 
 
   &__image {
     box-sizing: border-box;
     display: block;
-    width: 148px;
+    height: 130px;
     margin: 0 auto 24px;
 
     @include onTablet {
-      width: 173px;
-    }
-
-    @include onDesktop {
-      width: 208px;
+      height: 196px;
     }
   }
 
