@@ -5,30 +5,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: space-between;
+  height: 100%;
 
-  
+
   &__image {
     display: block;
-    margin-top: -150px;
-    width: 600px;
-    height: 600px;
+    width: 50%;
+    height: auto;
+
+    margin-bottom: 64px;
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
   }
 
   &__button {
-    width: 100px;
+    display: block;
+    width: 200px;
     height: 40px;
 
     background-color: $color-accent;
-
-    @include onTablet {
-      width: 125px;
-    }
-
-    @include onDesktop {
-      width: 160px;
-    }
 
     border: none;
     border-radius: 8px;
