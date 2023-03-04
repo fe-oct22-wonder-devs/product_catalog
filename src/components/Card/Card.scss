@@ -1,37 +1,24 @@
-@import '../../styles/main.scss';
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
 
 .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  width: 212px;
   padding: 32px;
 
   border: 1px solid $color-elements;
   border-radius: 8px;
 
-  @include onTablet {
-    width: 236px;
-  }
-
-  @include onDesktop {
-    width: 272px;
-  }
-
-
   &__image {
     box-sizing: border-box;
     display: block;
-    width: 148px;
+    height: 130px;
     margin: 0 auto 24px;
 
     @include onTablet {
-      width: 173px;
-    }
-
-    @include onDesktop {
-      width: 208px;
+      height: 196px;
     }
   }
 

@@ -3,7 +3,6 @@ import './Card.scss';
 import classNames from 'classnames';
 import { Phone } from '../../types/Phone';
 import { AddToCartButton } from '../AddToCartButton/AddToCartButton';
-// import testImage from './test_image.jpg';
 
 type Props = {
   phone: Phone;
