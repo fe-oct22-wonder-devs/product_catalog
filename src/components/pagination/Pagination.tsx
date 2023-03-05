@@ -3,59 +3,62 @@ import './Pagination.scss';
 
 type Props = {
   perPage: string,
-  totalCards: number | undefined,
   currentPage: string,
   onPageChange: (newPage: number) => void;
+  itemsCount: number,
 };
 
 export const Pagination: React.FC<Props> = ({
-  totalCards,
   onPageChange,
   perPage,
   currentPage,
+  itemsCount,
 }) => {
   const pageNumbers = [];
 
-  if (totalCards) {
-    const totalPages = Math.ceil(totalCards / +perPage);
+  const totalPages = Math.ceil(itemsCount / +perPage);
 
-    for (let i = 1; i <= totalPages; i += 1) {
-      pageNumbers.push(i);
-    }
+  for (let i = 1; i <= totalPages; i += 1) {
+    pageNumbers.push(i);
   }
 
   return (
-    <div className="pagination">
-      <button
-        type="button"
-        className="pagination-buttons pagination-buttons__arrow pagination-buttons__arrow--left"
-        onClick={() => {
-          onPageChange(+currentPage > 1 ? +currentPage - 1 : +currentPage);
-        }}
-      >
-      </button>
+    <div>
+      {totalPages > 1
+        && (
+          <div className="pagination">
+            <button
+              type="button"
+              className="pagination-buttons pagination-buttons__arrow pagination-buttons__arrow--left"
+              onClick={() => {
+                onPageChange(+currentPage > 1 ? +currentPage - 1 : +currentPage);
+              }}
+            >
+            </button>
 
-      <div className="pagination-list">
-        {pageNumbers.map(pageNumber => (
-          <button
-            type="button"
-            key={pageNumber}
-            className="pagination-buttons  "
-            onClick={() => onPageChange(pageNumber)}
-          >
-            {pageNumber}
-          </button>
-        ))}
-      </div>
+            <div className="pagination-list">
+              {pageNumbers.map(pageNumber => (
+                <button
+                  type="button"
+                  key={pageNumber}
+                  className="pagination-buttons pagination-buttons__numbers"
+                  onClick={() => onPageChange(pageNumber)}
+                >
+                  {pageNumber}
+                </button>
+              ))}
+            </div>
 
-      <button
-        type="button"
-        className="pagination-buttons pagination-buttons__arrow pagination-buttons__arrow--right"
-        onClick={() => {
-          onPageChange(+currentPage ? +currentPage + 1 : +currentPage);
-        }}
-      >
-      </button>
+            <button
+              type="button"
+              className="pagination-buttons pagination-buttons__arrow pagination-buttons__arrow--right"
+              onClick={() => {
+                onPageChange(+currentPage > totalPages ? +currentPage + 1 : +currentPage);
+              }}
+            >
+            </button>
+          </div>
+        )}
     </div>
   );
 };

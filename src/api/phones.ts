@@ -21,12 +21,12 @@ function get<T>(url: string): Promise<T> {
   return fetch(fullURL, { method: 'GET' }).then(res => res.json());
 }
 
-export const getPhones = () => get<Phone[]>('/phones');
-
 export const getPhonesPagination = (searchParams: QueryParams) => {
   const queryString = objToQueryString(searchParams);
 
   return get<Phone[]>(`/phones?${queryString}`);
 };
+
+export const getPhonesCount = () => get('/phones/length');
 
 // export const getUser = (userId: number) => get<User>(`/users/${userId}`);
