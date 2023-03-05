@@ -11,5 +11,9 @@ export type Phone = {
   color: string,
   ram: string,
   year: number,
-  image: string
+  image: string,
 };
+
+export interface PhoneInCart extends Phone{
+  count: number
+}

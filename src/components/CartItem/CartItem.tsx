@@ -1,25 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './CartItem.scss';
-import { Phone } from '../../types/Phone';
-import testImage from '../Card/test_image.jpg';
+import { PhoneInCart } from '../../types/Phone';
+import { useAppDispatch } from '../../store/hooks';
+import { increment, decrement, removeFromCart } from '../../store/cart/cartSlice';
 
 type Props = {
-  phone: Phone
+  phone: PhoneInCart
 };
 
 export const CartItem: React.FC<Props> = React.memo(({ phone }) => {
-  const [amountCounter, setAmountCounter] = useState(1);
+  const dispatch = useAppDispatch();
 
-  const { name, price } = phone;
+  const {
+    name, price, image, count,
+  } = phone;
 
-  const actuallPrice = price * amountCounter;
+  const actualPrice = price * count;
 
   const handleDecreaseClick = () => {
-    setAmountCounter(prev => prev - 1);
+    dispatch(decrement(phone.id));
   };
 
   const handleIncreaseClick = () => {
-    setAmountCounter(prev => prev + 1);
+    dispatch(increment(phone.id));
+  };
+
+  const handleRemoveClick = () => {
+    dispatch(removeFromCart(phone.id));
   };
 
   return (
@@ -28,12 +35,13 @@ export const CartItem: React.FC<Props> = React.memo(({ phone }) => {
         <button
           type="button"
           className="cart-item__remove-button"
+          onClick={handleRemoveClick}
         >
         </button>
 
         <div className="cart-item__image-container">
           <img
-            src={testImage}
+            src={image}
             alt={name}
             className="cart-item__image"
           />
@@ -50,12 +58,12 @@ export const CartItem: React.FC<Props> = React.memo(({ phone }) => {
             type="button"
             className="cart-item__price-section--decrease"
             onClick={handleDecreaseClick}
-            disabled={amountCounter === 1}
+            disabled={count === 1}
           >
           </button>
 
           <p className="cart-item__price-section--amount-counter">
-            {amountCounter}
+            {count}
           </p>
 
           <button
@@ -67,7 +75,7 @@ export const CartItem: React.FC<Props> = React.memo(({ phone }) => {
         </div>
 
         <p className="cart-item__price-section--price">
-          {`$${actuallPrice}`}
+          {`$${actualPrice}`}
         </p>
       </div>
     </div>

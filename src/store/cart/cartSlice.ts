@@ -2,11 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
-import { Phone } from '../../types/Phone';
-
-export interface PhoneInCart extends Phone{
-  count: number
-}
+import { Phone, PhoneInCart } from '../../types/Phone';
 
 interface PhoneState {
   phones: PhoneInCart[]
@@ -24,24 +20,40 @@ export const cartSlice = createSlice({
       const phone = { ...action.payload, count: 1 };
       const isPhoneInCart = state.phones.some(el => el.id === phone.id);
 
-      if (isPhoneInCart) {
-        state.phones = state.phones.filter(el => el.id !== phone.id);
-      } else {
+      if (!isPhoneInCart) {
         state.phones.push(phone);
       }
     },
-    // decrement: (state) => {
-    //   state.value -= 1;
-    // },
-    // // Use the PayloadAction type to declare the contents of `action.payload`
-    // incrementByAmount: (state, action: PayloadAction<number>) => {
-    //   state.value += action.payload;
-    // },
+    removeFromCart: (state, action: PayloadAction<string>) => {
+      const phoneId = action.payload;
+      const isPhoneInCart = state.phones.some(el => el.id === phoneId);
+
+      if (isPhoneInCart) {
+        state.phones = state.phones.filter(el => el.id !== phoneId);
+      }
+    },
+    increment: (state, action: PayloadAction<string>) => {
+      const phoneId = action.payload;
+      const phone = state.phones.find(el => el.id === phoneId);
+
+      if (phone) {
+        phone.count += 1;
+      }
+    },
+    decrement: (state, action: PayloadAction<string>) => {
+      const phoneId = action.payload;
+      const phone = state.phones.find(el => el.id === phoneId);
+
+      if (phone && phone.count > 1) {
+        phone.count -= 1;
+      }
+    },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { addToCart } = cartSlice.actions;
+export const {
+  addToCart, removeFromCart, increment, decrement,
+} = cartSlice.actions;
 
 export const selectCart = (state: RootState) => state.cart.phones;
 
