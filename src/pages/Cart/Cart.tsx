@@ -9,7 +9,7 @@ export const Cart: React.FC = () => {
   const [isModalOpened, setIsModalOpened] = useState(false);
   const gadgetsInCart = useAppSelector(selectCart);
 
-  const totalAmount = gadgetsInCart.reduce((acc, phone) => (acc + phone.price), 0);
+  const totalAmount = gadgetsInCart.reduce((acc, phone) => (acc + (phone.price * phone.count)), 0);
 
   const handleCheckoutClick = () => {
     setIsModalOpened(true);
