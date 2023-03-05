@@ -9,14 +9,24 @@
   height: 32px;
   width: 32px;
   border: 1px solid #E2E6E9;
+  background-color: white;
   border-radius: 50%;
-  background-color: #fff;
   margin-right: 8px;
+  
+  &:hover {
+    border-color: #0F0F11;
+  }
+
+  &__numbers {
+    
+    &:focus {
+      background-color: #0F0F11;
+      color: white;
+    }
+  }
 
   &__arrow {
-    border: 1px solid #B4BDC3;
-    background-color: #fff;
-    
+    border: 1px solid #B4BDC3;    
 
     &--left {
       background-image: url(../../img/icons/arrow_left.svg);
@@ -29,14 +39,9 @@
       background-image: url(../../img/icons/arrow_right.svg);
       background-position: center;
       background-repeat: no-repeat;
-
-      &:hover {
-        border-color: #0F0F11;
-      }
     }
   }
-
-  &:hover {
-    border-color: #0F0F11;
-  }
 }
+
+  
+

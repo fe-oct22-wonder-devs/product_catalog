@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { getPhonesPagination } from '../../api/phones';
+import { getPhonesCount, getPhonesPagination } from '../../api/phones';
 import { Pagination } from '../../components/pagination/Pagination';
 import { Phone } from '../../types/Phone';
 import './Phones.scss';
@@ -15,21 +15,22 @@ const defaultQuantity = perPageOptions[0];
 const defaultSort = sortOptions[0];
 
 export const Phones = () => {
-  const [accessoriesFromServer, setPhonesFromServer] = useState<Phone[]>();
+  const [phonesFromServer, setPhonesFromServer] = useState<Phone[]>([]);
   const [currentPage, setCurrentPage] = useState('1');
   const [selectedSort, setSelectedSort] = useState<SelectOptionType | null>(defaultSort);
   const [selectedQuantity, setSelectedQuantity]
     = useState<SelectOptionType | null>(defaultQuantity);
   const [queryParams, setQueryParams] = useSearchParams();
+  const [itemsCount, setItemsCount] = useState<number>(0);
 
   async function getPhonesFromServer() {
-    const phones = await getPhonesPagination({
+    const items = await getPhonesPagination({
       page: currentPage,
       perPage: selectedQuantity?.value ?? undefined,
       sort: selectedSort?.value || undefined,
     });
 
-    setPhonesFromServer(phones);
+    setPhonesFromServer(items);
 
     const params: Record<string, string> = {
       page: currentPage,
@@ -43,16 +44,19 @@ export const Phones = () => {
       params.sort = selectedSort.value;
     }
 
-    const accessories = await getPhonesPagination(params);
+    // eslint-disable-next-line no-console
+    console.log(params);
 
-    setPhonesFromServer(accessories);
+    const phones = await getPhonesPagination(params);
+
+    setPhonesFromServer(phones);
   }
 
   useEffect(() => {
     getPhonesFromServer();
-  }, []);
+  }, [currentPage, selectedQuantity, selectedSort, itemsCount]);
 
-  function sortChangeHandler(newSort: { value: string, label: string } | null) {
+  async function sortChangeHandler(newSort: { value: string, label: string } | null) {
     if (newSort !== null) {
       setSelectedSort(newSort);
       queryParams.set('sort', newSort.value);
@@ -68,23 +72,41 @@ export const Phones = () => {
     }
   }
 
+  async function currentPageChangeHandler(newPage: string) {
+    if (newPage !== null) {
+      setCurrentPage(newPage);
+      queryParams.set('page', newPage);
+      setQueryParams(queryParams);
+    }
+  }
+
+  async function getTotalCount() {
+    const totalCount = await getPhonesCount();
+
+    setItemsCount(Number(totalCount));
+  }
+
+  useEffect(() => {
+    getTotalCount();
+  }, [itemsCount]);
+
   return (
     <div className="wrapper">
       <Catalog
+        itemsCount={itemsCount}
         selectedPerPage={selectedQuantity}
         selectedSort={selectedSort}
-        products={accessoriesFromServer}
+        products={phonesFromServer}
         title="Mobile phones"
         onSortChange={(value: SelectOptionType | null) => sortChangeHandler(value)}
         onQuantityChange={(value: SelectOptionType | null) => perPageChangeHandler(value)}
       />
       <Pagination
-        totalCards={accessoriesFromServer?.length}
         perPage={selectedQuantity?.value || defaultQuantity.value}
-        onPageChange={(value) => setCurrentPage(value.toString())}
+        onPageChange={(value) => currentPageChangeHandler(value.toString())}
         currentPage={currentPage}
+        itemsCount={itemsCount}
       />
-
     </div>
   );
 };

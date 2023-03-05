@@ -1,5 +1,6 @@
 import React from 'react';
 import Select, { SingleValue } from 'react-select';
+import { colourStyles } from '../../styles/utils/helpers';
 import { Phone } from '../../types/Phone';
 import { Card } from '../Card/Card';
 import './Catalog.scss';
@@ -12,10 +13,11 @@ export type SelectOptionType = {
 type Props = {
   products: Phone[] | undefined,
   title: string;
+  itemsCount: number;
   selectedSort: SelectOptionType | null;
   selectedPerPage: SelectOptionType | null;
   onSortChange: (selectedSort: SelectOptionType | null) => void;
-  onQuantityChange: (setSelectedQuantity: SelectOptionType | null) => void;
+  onQuantityChange: (selectedQuantity: SelectOptionType | null) => void;
 };
 
 export const sortOptions = [
@@ -33,6 +35,7 @@ export const perPageOptions = [
 export const Catalog: React.FC<Props> = ({
   products,
   title,
+  itemsCount,
   selectedPerPage,
   selectedSort,
   onSortChange,
@@ -43,7 +46,7 @@ export const Catalog: React.FC<Props> = ({
       <h1 className="catalog__category">
         {title}
       </h1>
-      <p className="catalog__quantity">{`${products?.length} models`}</p>
+      <p className="catalog__quantity">{`${itemsCount} models`}</p>
       <div className="catalog__sort">
         <p className="catalog__sort--name">Sort by</p>
         <Select
@@ -53,15 +56,7 @@ export const Catalog: React.FC<Props> = ({
           onChange={(newValue: SingleValue<SelectOptionType>) => onSortChange(newValue)}
           isMulti={false}
           options={sortOptions}
-          theme={(theme) => ({
-            ...theme,
-            borderRadius: 8,
-            colors: {
-              ...theme.colors,
-              neutral0: 'grey',
-              neutral5: 'black',
-            },
-          })}
+          styles={colourStyles}
         />
       </div>
       <div className="catalog__sort">
@@ -73,6 +68,7 @@ export const Catalog: React.FC<Props> = ({
           onChange={(newValue: SingleValue<SelectOptionType>) => onQuantityChange(newValue)}
           isMulti={false}
           options={perPageOptions}
+          styles={colourStyles}
         />
       </div>
 
