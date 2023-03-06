@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import './App.scss';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Footer } from './components/Footer';
@@ -13,9 +13,41 @@ import { Rights } from './pages/Rights/Rights';
 import { Cart } from './pages/Cart/Cart';
 import { BurgerMenu } from './components/BurgerMenu/BurgerMenu';
 import { Favorite } from './pages/Favorite/Favorite';
+import { useAppDispatch, useAppSelector, useLocalStorage } from './store/hooks';
+import { addToCart, selectCart } from './store/cart/cartSlice';
+import { Phone, PhoneInCart } from './types/Phone';
+import { addToFavorite, selectFavorite } from './store/cart/favoriteSlice';
 
 export const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [, setGadgetsInStorage] = useLocalStorage<PhoneInCart[]>('GADGETS_IN_CART', []);
+  const [, setFavoriteInStorage] = useLocalStorage<Phone[]>('GADGETS_IN_FAVORITE', []);
+  const gadgetsInCart = useAppSelector(selectCart);
+  const gadgetsInFavorite = useAppSelector(selectFavorite);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const localStorageCart = window.localStorage.getItem('GADGETS_IN_CART');
+    const localStorageFavorite = window.localStorage.getItem('GADGETS_IN_FAVORITE');
+
+    if (localStorageCart) {
+      const cart = JSON.parse(localStorageCart);
+
+      cart.forEach((el: PhoneInCart) => dispatch(addToCart(el)));
+    }
+
+    if (localStorageFavorite) {
+      const favorite = JSON.parse(localStorageFavorite);
+
+      favorite.forEach((el: PhoneInCart) => dispatch(addToFavorite(el)));
+    }
+  }, []);
+
+  useEffect(() => {
+    setGadgetsInStorage(gadgetsInCart);
+    setFavoriteInStorage(gadgetsInFavorite);
+  }, [gadgetsInCart, gadgetsInFavorite]);
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen(!isMenuOpen);
