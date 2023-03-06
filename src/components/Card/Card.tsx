@@ -16,7 +16,6 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
   const gadgetsInFavorite = useAppSelector(selectFavorite);
   const isAddedToCart = gadgetsInCart.some(el => el.id === phone.id);
   const isAddedToFavorite = gadgetsInFavorite.some(el => el.id === phone.id);
-  // const [isAddedToFavorite, setIsAddedToFavorite] = useState(false);
 
   const dispatch = useAppDispatch();
 
