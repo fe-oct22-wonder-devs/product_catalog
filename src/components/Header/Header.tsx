@@ -2,15 +2,17 @@ import React, { memo } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
 import logo from '../../img/Logo/NiceGadgets.svg';
-// import favourites from '../../img/Icons/favourites.svg';
-// import cart from '../../img/Icons/cart.svg';
 import menu from '../../img/icons/menu.svg';
+import { useAppSelector } from '../../store/hooks';
+import { selectCart } from '../../store/cart/cartSlice';
 
 interface Props {
   toggleMenu: () => void
 }
 
 export const Header: React.FC<Props> = memo(({ toggleMenu }) => {
+  const gadgetsInCart = useAppSelector(selectCart);
+
   return (
     <header className="header">
       <a href="/" className="header__logo-link">
@@ -54,13 +56,19 @@ export const Header: React.FC<Props> = memo(({ toggleMenu }) => {
           to="/favorite"
           className="header__icon_link"
         >
-          <div className="header__icon header__icon--favourites"></div>
+          <div className="header__icon header__icon--favourites">
+            <div className="icon-counter">4</div>
+          </div>
         </Link>
         <Link
           to="/cart"
           className="header__icon_link"
         >
-          <div className="header__icon header__icon--cart"></div>
+          <div className="header__icon header__icon--cart">
+            {gadgetsInCart.length > 0 && (
+              <div className="icon-counter">{gadgetsInCart.length}</div>
+            )}
+          </div>
         </Link>
       </section>
 
