@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import Select, { SingleValue } from 'react-select';
 import { colourStyles } from '../../styles/utils/helpers';
 import { Phone } from '../../types/Phone';
-import { Card } from '../Card/Card';
 import './Catalog.scss';
+import { MainGRID } from '../MainGRID/MainGRID';
 
 export type SelectOptionType = {
   value: string;
@@ -74,11 +74,7 @@ export const Catalog: React.FC<Props> = ({
         />
       </div>
 
-      <div className="catalog__list">
-        {products?.map(product => (
-          <Card phone={product} key={product.id} />
-        ))}
-      </div>
+      <MainGRID products={products} />
 
     </main>
   );
