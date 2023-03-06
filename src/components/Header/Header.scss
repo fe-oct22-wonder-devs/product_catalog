@@ -67,6 +67,7 @@
   }
 
   &__icon {
+    position: relative;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -183,4 +184,22 @@
 
     background-color: $color-primary;
   }
+}
+
+.icon-counter {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  background: $color-secondary-accent;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  border: 1px solid $color-white;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 12px;
+  text-align: center;
+  color: $color-white;
 }

@@ -1,25 +1,27 @@
-import React, { memo, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { memo } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import './BurgerMenu.scss';
 import darkLogo from '../../img/Logo/NiceGadgets-dark.svg';
-import favourites from '../../img/icons/favourites.svg';
-import cart from '../../img/icons/cart.svg';
 import close from '../../img/icons/close.svg';
+import { useAppSelector } from '../../store/hooks';
+import { selectCart } from '../../store/cart/cartSlice';
 
 interface Props {
   toggleMenu: () => void,
 }
 
 export const BurgerMenu: React.FC<Props> = memo(({ toggleMenu }) => {
-  useEffect(() => {
-    const { body } = document;
+  const gadgetsInCart = useAppSelector(selectCart);
 
-    body.classList.add('no-scroll');
-
-    return () => {
-      body.classList.remove('no-scroll');
-    };
-  }, []);
+  // useEffect(() => {
+  //   const { body } = document;
+  //
+  //   body.classList.add('no-scroll');
+  //
+  //   return () => {
+  //     body.classList.remove('no-scroll');
+  //   };
+  // }, []);
 
   return (
     <header className="burger">
@@ -85,17 +87,27 @@ export const BurgerMenu: React.FC<Props> = memo(({ toggleMenu }) => {
         </ul>
       </nav>
 
-      <section className="burger-icons">
-        <img
-          className="burger-icons__icon"
-          src={favourites}
-          alt="favourites"
-        />
-        <img
-          className="burger-icons__icon"
-          src={cart}
-          alt="cart"
-        />
+      <section className="burger__icons">
+        <Link
+          to="/favorite"
+          className="burger__icon_link"
+          onClick={toggleMenu}
+        >
+          <div className="header__icon header__icon--favourites">
+            <div className="icon-counter">4</div>
+          </div>
+        </Link>
+        <Link
+          to="/cart"
+          className="burger__icon_link"
+          onClick={toggleMenu}
+        >
+          <div className="header__icon header__icon--cart">
+            {gadgetsInCart.length > 0 && (
+              <div className="icon-counter">{gadgetsInCart.length}</div>
+            )}
+          </div>
+        </Link>
       </section>
     </header>
   );
