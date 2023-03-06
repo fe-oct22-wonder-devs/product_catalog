@@ -1,5 +1,6 @@
 import React from 'react';
 import './Pagination.scss';
+import Pagination from '@mui/material/Pagination';
 
 type Props = {
   perPage: string,
@@ -8,7 +9,7 @@ type Props = {
   itemsCount: number,
 };
 
-export const Pagination: React.FC<Props> = ({
+export const ItemsPagination: React.FC<Props> = ({
   onPageChange,
   perPage,
   currentPage,
@@ -23,42 +24,12 @@ export const Pagination: React.FC<Props> = ({
   }
 
   return (
-    <div>
-      {totalPages > 1
-        && (
-          <div className="pagination">
-            <button
-              type="button"
-              className="pagination-buttons pagination-buttons__arrow pagination-buttons__arrow--left"
-              onClick={() => {
-                onPageChange(+currentPage > 1 ? +currentPage - 1 : +currentPage);
-              }}
-            >
-            </button>
-
-            <div className="pagination-list">
-              {pageNumbers.map(pageNumber => (
-                <button
-                  type="button"
-                  key={pageNumber}
-                  className="pagination-buttons pagination-buttons__numbers"
-                  onClick={() => onPageChange(pageNumber)}
-                >
-                  {pageNumber}
-                </button>
-              ))}
-            </div>
-
-            <button
-              type="button"
-              className="pagination-buttons pagination-buttons__arrow pagination-buttons__arrow--right"
-              onClick={() => {
-                onPageChange(+currentPage > totalPages ? +currentPage + 1 : +currentPage);
-              }}
-            >
-            </button>
-          </div>
-        )}
-    </div>
+    <Pagination
+      className="pagination"
+      count={totalPages}
+      variant="outlined"
+      page={+currentPage}
+      onChange={(e, value) => onPageChange(value)}
+    />
   );
 };
