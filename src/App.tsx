@@ -12,6 +12,7 @@ import { Contacts } from './pages/Contacts/Contacts';
 import { Rights } from './pages/Rights/Rights';
 import { Cart } from './pages/Cart/Cart';
 import { BurgerMenu } from './components/BurgerMenu/BurgerMenu';
+import './styles/main.scss';
 
 export const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
