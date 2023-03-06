@@ -17,6 +17,7 @@ import { useAppDispatch, useAppSelector, useLocalStorage } from './store/hooks';
 import { addToCart, selectCart } from './store/cart/cartSlice';
 import { Phone, PhoneInCart } from './types/Phone';
 import { addToFavorite, selectFavorite } from './store/cart/favoriteSlice';
+import { ProductItem } from './pages/ProductItem/ProductItem';
 
 export const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,6 +61,7 @@ export const App: React.FC = () => {
         : (
           <>
             <Header toggleMenu={toggleMenu} />
+            <ProductItem />
             <div className="container">
               <Routes>
                 <Route path="*" element={<PageNotFound />} />
