@@ -1,3 +1,5 @@
+@import '../../styles/main.scss';
+
 .pagination {
   display: flex;
   align-items: center;
@@ -8,25 +10,24 @@
 .pagination-buttons {
   height: 32px;
   width: 32px;
-  border: 1px solid #E2E6E9;
-  background-color: white;
+  border: 1px solid $color-elements;
   border-radius: 50%;
   margin-right: 8px;
   
   &:hover {
-    border-color: #0F0F11;
+    border-color: $color-primary;
   }
 
   &__numbers {
     
-    &:focus {
-      background-color: #0F0F11;
-      color: white;
+    &--active {
+      background-color: $color-primary;
+      color: $color-white;
     }
   }
 
   &__arrow {
-    border: 1px solid #B4BDC3;    
+    border: 1px solid $color-icons;    
 
     &--left {
       background-image: url(../../img/icons/arrow_left.svg);

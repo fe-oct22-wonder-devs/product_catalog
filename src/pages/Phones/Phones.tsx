@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getPhonesCount, getPhonesPagination } from '../../api/phones';
-import { Pagination } from '../../components/pagination/Pagination';
 import { Phone } from '../../types/Phone';
 import './Phones.scss';
 import {
   Catalog,
-  perPageOptions,
   SelectOptionType,
   sortOptions,
+  perPageOptions,
 } from '../../components/catalog/Catalog';
+import { ItemsPagination } from '../../components/pagination/Pagination';
 
 const defaultQuantity = perPageOptions[0];
 const defaultSort = sortOptions[0];
@@ -44,9 +44,6 @@ export const Phones = () => {
       params.sort = selectedSort.value;
     }
 
-    // eslint-disable-next-line no-console
-    console.log(params);
-
     const phones = await getPhonesPagination(params);
 
     setPhonesFromServer(phones);
@@ -69,6 +66,7 @@ export const Phones = () => {
       setSelectedQuantity(newPerPage);
       queryParams.set('quantity', newPerPage.value);
       setQueryParams(queryParams);
+      setCurrentPage('1');
     }
   }
 
@@ -101,7 +99,7 @@ export const Phones = () => {
         onSortChange={(value: SelectOptionType | null) => sortChangeHandler(value)}
         onQuantityChange={(value: SelectOptionType | null) => perPageChangeHandler(value)}
       />
-      <Pagination
+      <ItemsPagination
         perPage={selectedQuantity?.value || defaultQuantity.value}
         onPageChange={(value) => currentPageChangeHandler(value.toString())}
         currentPage={currentPage}

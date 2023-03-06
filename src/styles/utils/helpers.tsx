@@ -1,19 +1,21 @@
 export const colourStyles = {
-  option: (styles: {}, isFocused: {}) => ({
+  option: (styles: {}) => ({
     ...styles,
-    background: isFocused
-      ? 'hsl(210, 25%, 98%)'
-      : 'white',
     color: 'black',
+    background: 'white',
+    '&:hover': {
+      background: 'hsl(210, 25%, 98%)',
+    },
   }),
   control: (base: {}) => ({
     ...base,
-    border: '1px solid hsl(204°, 11%, 74%);',
+    width: 136,
+    height: 40,
+    marginRight: 16,
+    marginBottom: 24,
     boxShadow: 'none',
-    outline: '1px solid white',
+    fontWeight: 700,
+    fontSize: 14,
     borderRadius: 8,
-    '&:hover': {
-      border: '1px solid black',
-    },
   }),
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Select, { SingleValue } from 'react-select';
 import { colourStyles } from '../../styles/utils/helpers';
 import { Phone } from '../../types/Phone';
@@ -27,9 +27,9 @@ export const sortOptions = [
 ];
 
 export const perPageOptions = [
+  { value: '4', label: '4' },
+  { value: '8', label: '8' },
   { value: '16', label: '16' },
-  { value: '32', label: '32' },
-  { value: '48', label: '48' },
 ];
 
 export const Catalog: React.FC<Props> = ({
@@ -41,6 +41,10 @@ export const Catalog: React.FC<Props> = ({
   onSortChange,
   onQuantityChange,
 }) => {
+  useEffect(() => {
+    perPageOptions[3] = { value: `${itemsCount}`, label: 'all' };
+  }, [itemsCount]);
+
   return (
     <main className="catalog">
       <h1 className="catalog__category">
@@ -51,7 +55,6 @@ export const Catalog: React.FC<Props> = ({
         <p className="catalog__sort--name">Sort by</p>
         <Select
           placeholder={selectedSort}
-          className="catalog__select"
           value={selectedSort}
           onChange={(newValue: SingleValue<SelectOptionType>) => onSortChange(newValue)}
           isMulti={false}
@@ -63,7 +66,6 @@ export const Catalog: React.FC<Props> = ({
         <p className="catalog__sort--name">Items on page</p>
         <Select
           placeholder={selectedPerPage}
-          className="catalog__select"
           value={selectedPerPage}
           onChange={(newValue: SingleValue<SelectOptionType>) => onQuantityChange(newValue)}
           isMulti={false}
