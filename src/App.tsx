@@ -12,6 +12,7 @@ import { Contacts } from './pages/Contacts/Contacts';
 import { Rights } from './pages/Rights/Rights';
 import { Cart } from './pages/Cart/Cart';
 import { BurgerMenu } from './components/BurgerMenu/BurgerMenu';
+import { Favorite } from './pages/Favorite/Favorite';
 
 export const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,6 +39,7 @@ export const App: React.FC = () => {
                 <Route path="/rights" element={<Rights />} />
                 <Route path="/tablets" element={<Tablets />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/favorite" element={<Favorite />} />
               </Routes>
             </div>
 

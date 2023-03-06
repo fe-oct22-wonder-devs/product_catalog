@@ -2,30 +2,6 @@
 @import '../../styles/utils/mixins';
 
 .catalog {
-  &__list {
-    display: grid;
-
-    gap: 40px 16px;
-    grid-template-columns: repeat(1, 287px);
-    justify-content: center;
-    justify-items: center;
-
-    margin: 0 auto;
-
-
-    @include onTablet {
-      grid-template-columns: repeat(2, 288px);
-    };
-
-    @include onLaptop {
-      grid-template-columns: repeat(3, 229px);
-    };
-
-    @include onDesktop {
-      grid-template-columns: repeat(4, 272px);
-    };
-  }
-
   &__card {
     display: flex;
     justify-content: center;

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Card.scss';
 import classNames from 'classnames';
 import { Phone } from '../../types/Phone';
 import { AddToCartButton } from '../AddToCartButton/AddToCartButton';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { addToCart, removeFromCart, selectCart } from '../../store/cart/cartSlice';
+import { selectFavorite, addToFavorite, removeFromFavorite } from '../../store/cart/favoriteSlice';
 
 type Props = {
   phone: Phone;
@@ -12,8 +13,11 @@ type Props = {
 
 export const Card: React.FC<Props> = React.memo(({ phone }) => {
   const gadgetsInCart = useAppSelector(selectCart);
+  const gadgetsInFavorite = useAppSelector(selectFavorite);
   const isAddedToCart = gadgetsInCart.some(el => el.id === phone.id);
-  const [isAddedToFavorite, setIsAddedToFavorite] = useState(false);
+  const isAddedToFavorite = gadgetsInFavorite.some(el => el.id === phone.id);
+  // const [isAddedToFavorite, setIsAddedToFavorite] = useState(false);
+
   const dispatch = useAppDispatch();
 
   const {
@@ -27,11 +31,18 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
   } = phone;
 
   const handleAddToCartClick = () => {
-    // setIsAddedToCart(!isAddedToCart);
     if (isAddedToCart) {
       dispatch(removeFromCart(phone.id));
     } else {
       dispatch(addToCart(phone));
+    }
+  };
+
+  const handleAddToFavoriteClick = () => {
+    if (isAddedToFavorite) {
+      dispatch(removeFromFavorite(phone.id));
+    } else {
+      dispatch(addToFavorite(phone));
     }
   };
 
@@ -75,7 +86,7 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
         <button
           type="button"
           className={classNames(!isAddedToFavorite ? 'card__buy__favorite' : 'card__buy__favorite--is-added')}
-          onClick={() => setIsAddedToFavorite(!isAddedToFavorite)}
+          onClick={handleAddToFavoriteClick}
         >
         </button>
       </div>
