@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import './App.scss';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Footer } from './components/Footer';
@@ -12,10 +12,31 @@ import { Contacts } from './pages/Contacts/Contacts';
 import { Rights } from './pages/Rights/Rights';
 import { Cart } from './pages/Cart/Cart';
 import { BurgerMenu } from './components/BurgerMenu/BurgerMenu';
+import { useAppDispatch, useAppSelector, useLocalStorage } from './store/hooks';
+import { addToCart, selectCart } from './store/cart/cartSlice';
+import { PhoneInCart } from './types/Phone';
 import { Favorite } from './pages/Favorite/Favorite';
 
 export const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [, setGadgetsInStarage] = useLocalStorage<PhoneInCart[]>('GADGETS_IN_CART', []);
+  const gadgetsInCart = useAppSelector(selectCart);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const localStorageCart = window.localStorage.getItem('GADGETS_IN_CART');
+
+    if (localStorageCart) {
+      const cart = JSON.parse(localStorageCart);
+
+      cart.forEach((el: PhoneInCart) => dispatch(addToCart(el)));
+    }
+  }, []);
+
+  useEffect(() => {
+    setGadgetsInStarage(gadgetsInCart);
+  }, [gadgetsInCart]);
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen(!isMenuOpen);

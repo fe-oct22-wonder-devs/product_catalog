@@ -17,7 +17,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<Phone>) => {
-      const phone = { ...action.payload, count: 1 };
+      const phone = { ...action.payload, count: action.payload.count || 1 };
       const isPhoneInCart = state.phones.some(el => el.id === phone.id);
 
       if (!isPhoneInCart) {
