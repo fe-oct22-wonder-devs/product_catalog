@@ -13,16 +13,6 @@ interface Props {
 export const BurgerMenu: React.FC<Props> = memo(({ toggleMenu }) => {
   const gadgetsInCart = useAppSelector(selectCart);
 
-  // useEffect(() => {
-  //   const { body } = document;
-  //
-  //   body.classList.add('no-scroll');
-  //
-  //   return () => {
-  //     body.classList.remove('no-scroll');
-  //   };
-  // }, []);
-
   return (
     <header className="burger">
       <section className="burger-header">
