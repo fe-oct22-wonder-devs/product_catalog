@@ -1,9 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+@import "../utils/mixins";
+
+@font-face{
+  font-family: "Mont-Regular";
+  src: local("Regular"),
+    url("../../fonts/Mont-Regular.otf");
+}
+
+@font-face{
+  font-family: "Mont-SemiBold";
+  src: local("SemiBold"),
+    url("../../fonts/Mont-SemiBold.otf");
+}
+
+@font-face{
+  font-family: "Mont-Bold";
+  src: local("Bold"),
+    url("../../fonts/Mont-Bold.otf");
+}
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Mont-Regular';
+}
+
+.wrapper {
+  @include mainWrapper;
+
+  @include onLaptop; @include onTablet {
+    padding: 40px 24px;
+  };
+
+  @include onDesktop {
+    padding: 40px 32px;
+  };
 }
