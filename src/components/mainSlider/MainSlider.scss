@@ -6,6 +6,18 @@
   width: 100%;
   max-width: 1040px;
 
+  &__title {
+    font-family: 'Mont-Bold';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.01em;
+    color: $color-primary;
+    margin-bottom: 56px;
+    margin-top: 56px;
+  }
+
   &__main-img {
     height: 100%;
     width:100%;
@@ -81,7 +93,7 @@
 
     &-prev {
       position: absolute;
-      left: -45px;
+      left: -50px;
 
       &::before {
         content: '';
@@ -97,7 +109,7 @@
 
     &-next {
       position: absolute;
-      right: -45px;
+      right: -50px;
 
       &::before {
         content: '';

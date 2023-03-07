@@ -7,13 +7,4 @@
   max-width: 1200px;
   min-width: 320px;
   margin: 0 auto;
-  padding: 24px 0px;
-
-  @include onLaptop; @include onTablet {
-    padding: 40px 24px;
-  };
-
-  @include onDesktop {
-    padding: 40px 32px;
-  };
 }
