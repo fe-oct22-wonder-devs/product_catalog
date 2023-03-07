@@ -1,21 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.0f791530.chunk.css",
-    "main.js": "./static/js/main.ab1ab7a1.chunk.js",
-    "main.js.map": "./static/js/main.ab1ab7a1.chunk.js.map",
+    "main.css": "./static/css/main.43d14f24.chunk.css",
+    "main.js": "./static/js/main.87863933.chunk.js",
+    "main.js.map": "./static/js/main.87863933.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8c9895b1.js",
     "runtime-main.js.map": "./static/js/runtime-main.8c9895b1.js.map",
-    "static/js/2.35648c2d.chunk.js": "./static/js/2.35648c2d.chunk.js",
-    "static/js/2.35648c2d.chunk.js.map": "./static/js/2.35648c2d.chunk.js.map",
+    "static/js/2.3e38b592.chunk.js": "./static/js/2.3e38b592.chunk.js",
+    "static/js/2.3e38b592.chunk.js.map": "./static/js/2.3e38b592.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.0f791530.chunk.css.map": "./static/css/main.0f791530.chunk.css.map",
-    "static/js/2.35648c2d.chunk.js.LICENSE.txt": "./static/js/2.35648c2d.chunk.js.LICENSE.txt",
+    "static/css/main.43d14f24.chunk.css.map": "./static/css/main.43d14f24.chunk.css.map",
+    "static/js/2.3e38b592.chunk.js.LICENSE.txt": "./static/js/2.3e38b592.chunk.js.LICENSE.txt",
     "static/media/CartItem.scss": "./static/media/increase.66029f07.svg",
     "static/media/NiceGadgets-dark.0d919534.svg": "./static/media/NiceGadgets-dark.0d919534.svg",
     "static/media/NiceGadgets.c8e37169.svg": "./static/media/NiceGadgets.c8e37169.svg",
     "static/media/Pagination.scss": "./static/media/arrow_right.bf3a1891.svg",
     "static/media/Footer.scss": "./static/media/back_to_top_hover.54b6b059.svg",
     "static/media/Header.scss": "./static/media/favourites.a8d9e134.svg",
+    "static/media/category-accessories.05d41563.png": "./static/media/category-accessories.05d41563.png",
+    "static/media/category-phones.f907b73b.png": "./static/media/category-phones.f907b73b.png",
+    "static/media/category-tablets.0f37e8bd.png": "./static/media/category-tablets.0f37e8bd.png",
     "static/media/close.cdfb6ae5.svg": "./static/media/close.cdfb6ae5.svg",
     "static/media/Card.scss": "./static/media/favorite_hover.928c1dbc.svg",
     "static/media/footer__logo.a5488e09.svg": "./static/media/footer__logo.a5488e09.svg",
@@ -24,8 +27,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.8c9895b1.js",
-    "static/js/2.35648c2d.chunk.js",
-    "static/css/main.0f791530.chunk.css",
-    "static/js/main.ab1ab7a1.chunk.js"
+    "static/js/2.3e38b592.chunk.js",
+    "static/css/main.43d14f24.chunk.css",
+    "static/js/main.87863933.chunk.js"
   ]
 }
