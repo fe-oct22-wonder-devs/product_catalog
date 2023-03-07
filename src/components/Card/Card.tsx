@@ -47,11 +47,13 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
 
   return (
     <div className="card">
-      <img
-        className="card__image"
-        src={image}
-        alt={name}
-      />
+      <div className="card__some">
+        <img
+          className="card__image"
+          src={image}
+          alt={name}
+        />
+      </div>
 
       <h2 className="card__title">{`${name} (iMT9G2FS/A)`}</h2>
 
