@@ -27,6 +27,13 @@ export const getPhonesPagination = (searchParams: QueryParams) => {
   return get<Phone[]>(`/phones?${queryString}`);
 };
 
-export const getPhonesCount = () => get('/phones/length');
+export const getTabletPagination = (searchParams: QueryParams) => {
+  const queryString = objToQueryString(searchParams);
+
+  return get<Phone[]>(`/tablets?${queryString}`);
+};
+
+export const getPhonesCount = () => get<number>('/phones/length');
+export const getTabletsCount = () => get<number>('/tablets/length');
 
 // export const getUser = (userId: number) => get<User>(`/users/${userId}`);

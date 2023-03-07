@@ -1,0 +1,26 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+.categories {
+  padding-bottom: 64px;
+
+  &__title {
+    padding-bottom: 24px;
+
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    color: $color-primary;
+  }
+  &__wraper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
+}
