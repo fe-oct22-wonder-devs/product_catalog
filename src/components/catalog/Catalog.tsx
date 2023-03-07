@@ -51,27 +51,29 @@ export const Catalog: React.FC<Props> = ({
         {title}
       </h1>
       <p className="catalog__quantity">{`${itemsCount} models`}</p>
-      <div className="catalog__sort">
-        <p className="catalog__sort--name">Sort by</p>
-        <Select
-          placeholder={selectedSort}
-          value={selectedSort}
-          onChange={(newValue: SingleValue<SelectOptionType>) => onSortChange(newValue)}
-          isMulti={false}
-          options={sortOptions}
-          styles={colourStyles}
-        />
-      </div>
-      <div className="catalog__sort">
-        <p className="catalog__sort--name">Items on page</p>
-        <Select
-          placeholder={selectedPerPage}
-          value={selectedPerPage}
-          onChange={(newValue: SingleValue<SelectOptionType>) => onQuantityChange(newValue)}
-          isMulti={false}
-          options={perPageOptions}
-          styles={colourStyles}
-        />
+      <div className="catalog__filters">
+        <div className="catalog__sort">
+          <p className="catalog__sort--name">Sort by</p>
+          <Select
+            placeholder={selectedSort}
+            value={selectedSort}
+            onChange={(newValue: SingleValue<SelectOptionType>) => onSortChange(newValue)}
+            isMulti={false}
+            options={sortOptions}
+            styles={colourStyles}
+          />
+        </div>
+        <div className="catalog__sort">
+          <p className="catalog__sort--name">Items on page</p>
+          <Select
+            placeholder={selectedPerPage}
+            value={selectedPerPage}
+            onChange={(newValue: SingleValue<SelectOptionType>) => onQuantityChange(newValue)}
+            isMulti={false}
+            options={perPageOptions}
+            styles={colourStyles}
+          />
+        </div>
       </div>
 
       <MainGRID products={products} />

@@ -1,0 +1,127 @@
+@import '../../styles/main.scss';
+
+
+.slider {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1040px;
+
+  &__main-img {
+    height: 100%;
+    width:100%;
+    object-fit: fill;
+  }
+
+  &__banner {
+   content: url('../../img/Home_page/slider_small_iPhone14Pro.png');
+   width: 100%;
+   margin: 0 auto;
+   object-fit: fill;
+
+  @include onTablet{
+    content: '';
+    width: 100%;
+    margin: 0 auto;
+  };
+  @include onLaptop {
+    content: '';
+    width: 100%;
+    margin: 0 auto;
+  };
+  @include onDesktop {
+    content: '';
+    width: 100%;
+    height: 400px;
+    max-width: 1040px;
+    margin: 0 auto;
+  };
+ }
+
+ &-wrapper {
+    @include onTablet{
+      margin-left: 75px;
+      margin-right: 75px;
+      max-width: 1136px;
+    };
+
+    @include onLaptop {
+        margin-left: 75px;
+        margin-right: 75px;
+        max-width: 1136px;
+      };
+
+    @include onDesktop {
+      margin-left: 75px;
+      margin-right: 75px;
+      max-width: 1136px;
+    };
+  }
+ }
+
+.slick {
+  @include onTablet {
+    &-prev,
+    &-next {
+      width: 32px;
+      height: 100%;
+      
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      
+      border: 1px solid $color-icons;
+      border-radius: 48px;
+      outline: none;
+      padding: 14px;
+
+      &:hover {
+        border: 1px solid #0f0f11;
+      }
+    }
+
+    &-prev {
+      position: absolute;
+      left: -45px;
+
+      &::before {
+        content: '';
+        display: block;
+
+        width: 6px;
+        height: 10px;
+        background-image: url('../../img/icons/arrow_left.svg');
+
+        
+      }
+    }
+
+    &-next {
+      position: absolute;
+      right: -45px;
+
+      &::before {
+        content: '';
+        display: block;
+
+        width: 6px;
+        height: 10px;
+
+        background-image: url('../../img/icons/arrow_right.svg');
+       
+      }
+    }
+  }
+  &-dot {
+    background: $color-elements;
+
+    &:hover {
+      background: $color-secondary;
+    }
+  }
+
+  &-active {
+    .slick-dot {
+      background: #0f0f11;
+    }
+  }
+}

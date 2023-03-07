@@ -25,6 +25,24 @@
     };
   }
 
+  &__filters {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      display: block;
+    };
+
+    @include onLaptop{
+      display: block;
+    };
+    
+    @include onDesktop{
+      display: block;
+    };
+
+  }
+
   &__sort {
     display: inline-block;
 

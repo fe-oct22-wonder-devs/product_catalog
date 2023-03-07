@@ -1,2 +1,19 @@
 @import '../../styles/utils/mixins';
 
+.home-wrapper {
+  font-family: 'Mont-Regular';
+  min-height: 80vh;
+  height: 100%;
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 24px 0px;
+
+  @include onLaptop; @include onTablet {
+    padding: 40px 24px;
+  };
+
+  @include onDesktop {
+    padding: 40px 32px;
+  };
+}
