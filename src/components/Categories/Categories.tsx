@@ -1,8 +1,8 @@
 import React, { memo, useEffect, useState } from 'react';
 import './Categories.scss';
-import phoneImg from '../../img/categotyImg/category-phones.png';
-import tabletImg from '../../img/categotyImg/category-tablets.png';
-import accessoriesImg from '../../img/categotyImg/categoryc-accessories.png';
+import phoneImg from '../../img/categoryImg/category-phones.png';
+import tabletImg from '../../img/categoryImg/category-tablets.png';
+import accessoriesImg from '../../img/categoryImg/category-accessories.png';
 import { Category } from '../Category/Category';
 import { getPhonesCount, getTabletsCount } from '../../api/phones';
 
