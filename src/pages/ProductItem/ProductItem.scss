@@ -7,9 +7,17 @@
     margin-bottom: 64px;
   }
 
-  &__images-section {
-    &--image {
-      margin: 0 auto;
+  &__small-img {
+    height: 270px;
+    object-fit: contain;
+    object-position: center;
+
+    @media screen and (min-width: 900px) {
+      height: 350px;
+    }
+
+    @include onDesktop {
+      height: 442px;
     }
   }
 
@@ -326,4 +334,8 @@
   width: 100%;
   border: 1px solid $color-elements;
   margin-bottom: 24px;
+}
+
+.item .slider {
+  margin-bottom: 40px;
 }
