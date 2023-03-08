@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.4ad55a86.chunk.css",
-    "main.js": "./static/js/main.4ac1b2f6.chunk.js",
-    "main.js.map": "./static/js/main.4ac1b2f6.chunk.js.map",
+    "main.css": "./static/css/main.59229b59.chunk.css",
+    "main.js": "./static/js/main.dad6cdc9.chunk.js",
+    "main.js.map": "./static/js/main.dad6cdc9.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8c9895b1.js",
     "runtime-main.js.map": "./static/js/runtime-main.8c9895b1.js.map",
     "static/css/2.a1be631c.chunk.css": "./static/css/2.a1be631c.chunk.css",
-    "static/js/2.c48ca4ab.chunk.js": "./static/js/2.c48ca4ab.chunk.js",
-    "static/js/2.c48ca4ab.chunk.js.map": "./static/js/2.c48ca4ab.chunk.js.map",
+    "static/js/2.2f5037c1.chunk.js": "./static/js/2.2f5037c1.chunk.js",
+    "static/js/2.2f5037c1.chunk.js.map": "./static/js/2.2f5037c1.chunk.js.map",
     "index.html": "./index.html",
     "static/css/2.a1be631c.chunk.css.map": "./static/css/2.a1be631c.chunk.css.map",
-    "static/css/main.4ad55a86.chunk.css.map": "./static/css/main.4ad55a86.chunk.css.map",
-    "static/js/2.c48ca4ab.chunk.js.LICENSE.txt": "./static/js/2.c48ca4ab.chunk.js.LICENSE.txt",
+    "static/css/main.59229b59.chunk.css.map": "./static/css/main.59229b59.chunk.css.map",
+    "static/js/2.2f5037c1.chunk.js.LICENSE.txt": "./static/js/2.2f5037c1.chunk.js.LICENSE.txt",
     "static/media/CartItem.scss": "./static/media/increase.66029f07.svg",
     "static/media/NiceGadgets-dark.0d919534.svg": "./static/media/NiceGadgets-dark.0d919534.svg",
     "static/media/NiceGadgets.c8e37169.svg": "./static/media/NiceGadgets.c8e37169.svg",
@@ -29,13 +29,17 @@
     "static/media/not_found.f70ff45b.png": "./static/media/not_found.f70ff45b.png",
     "static/media/slick-theme.css": "./static/media/slick.c94f7671.ttf",
     "static/media/slider_iPhone14Pro.08adf02e.png": "./static/media/slider_iPhone14Pro.08adf02e.png",
-    "static/media/MainSlider.scss": "./static/media/slider_small_iPhone14Pro.e657efc7.png"
+    "static/media/MainSlider.scss": "./static/media/slider_small_iPhone14Pro.e657efc7.png",
+    "static/media/test1.0ef6a676.jpg": "./static/media/test1.0ef6a676.jpg",
+    "static/media/test2.d9c0f1f0.jpg": "./static/media/test2.d9c0f1f0.jpg",
+    "static/media/test3.a4667279.jpg": "./static/media/test3.a4667279.jpg",
+    "static/media/test4.b46b0a5b.jpg": "./static/media/test4.b46b0a5b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.8c9895b1.js",
     "static/css/2.a1be631c.chunk.css",
-    "static/js/2.c48ca4ab.chunk.js",
-    "static/css/main.4ad55a86.chunk.css",
-    "static/js/main.4ac1b2f6.chunk.js"
+    "static/js/2.2f5037c1.chunk.js",
+    "static/css/main.59229b59.chunk.css",
+    "static/js/main.dad6cdc9.chunk.js"
   ]
 }
