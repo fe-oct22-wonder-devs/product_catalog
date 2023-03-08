@@ -1,6 +1,7 @@
 @import '../../styles/main.scss';
 
 
+
 .slider {
   margin: 0 auto;
   width: 100%;
@@ -89,6 +90,8 @@
   @include onDesktop; @include onLaptop; @include onTablet {
     &-prev,
     &-next {
+    display: block !important;
+
       width: 32px;
       height: 100%;
       

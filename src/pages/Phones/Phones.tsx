@@ -31,22 +31,6 @@ export const Phones = () => {
     });
 
     setPhonesFromServer(items);
-
-    const params: Record<string, string> = {
-      page: currentPage,
-    };
-
-    if (selectedQuantity !== null) {
-      params.perPage = selectedQuantity.value;
-    }
-
-    if (selectedSort !== null) {
-      params.sort = selectedSort.value;
-    }
-
-    const phones = await getPhonesPagination(params);
-
-    setPhonesFromServer(phones);
   }
 
   useEffect(() => {
