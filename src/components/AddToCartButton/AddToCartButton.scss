@@ -2,9 +2,10 @@
 @import '../../styles/utils/mixins';
 
 .button {
-  width: 100px;
+  width: 160px;
   height: 40px;
   background-color: $color-accent;
+
 
   @include onTablet {
     width: 125px;

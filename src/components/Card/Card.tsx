@@ -14,8 +14,8 @@ type Props = {
 export const Card: React.FC<Props> = React.memo(({ phone }) => {
   const gadgetsInCart = useAppSelector(selectCart);
   const gadgetsInFavorite = useAppSelector(selectFavorite);
-  const isAddedToCart = gadgetsInCart.some(el => el.id === phone.id);
-  const isAddedToFavorite = gadgetsInFavorite.some(el => el.id === phone.id);
+  const isAddedToCart = gadgetsInCart.some(el => el.phoneId === phone.phoneId);
+  const isAddedToFavorite = gadgetsInFavorite.some(el => el.phoneId === phone.phoneId);
 
   const dispatch = useAppDispatch();
 
@@ -47,13 +47,11 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
 
   return (
     <div className="card">
-      <div className="card__some">
-        <img
-          className="card__image"
-          src={image}
-          alt={name}
-        />
-      </div>
+      <img
+        className="card__image"
+        src={image}
+        alt={name}
+      />
 
       <h2 className="card__title">{`${name} (iMT9G2FS/A)`}</h2>
 

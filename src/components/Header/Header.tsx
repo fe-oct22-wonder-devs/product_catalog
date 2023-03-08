@@ -17,13 +17,13 @@ export const Header: React.FC<Props> = memo(({ toggleMenu }) => {
 
   return (
     <header className="header">
-      <a href="/" className="header__logo-link">
+      <Link to="/" className="header__logo-link">
         <img
           className="header__logo"
           src={logo}
           alt="NiceGadgets logo"
         />
-      </a>
+      </Link>
 
       <nav className="nav">
         <ul className="nav__list">

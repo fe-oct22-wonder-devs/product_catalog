@@ -16,6 +16,12 @@
   }
 }
 
+@mixin onMobile {
+  @media (max-width: 639px) {
+    @content;
+  }
+}
+
 @mixin mainWrapper {
   font-family: 'Mont-Regular';
   min-height: 80vh;
