@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import './ProductItem.scss';
+import './SliderStyles.scss';
 import classNames from 'classnames';
 
+import Slider from 'react-slick';
 import testPhone from '../../data/phoneToTest.json';
 import mainTest from './mainTest.jpg';
-// import test1 from './test1.jpg';
-// import test2 from './test2.jpg';
-// import test3 from './test3.jpg';
-// import test4 from './test4.jpg';
+import test1 from './test1.jpg';
+import test2 from './test2.jpg';
+import test3 from './test3.jpg';
+import test4 from './test4.jpg';
 import { AddToCartButton } from '../../components/AddToCartButton/AddToCartButton';
 // import { useAppDispatch, useAppSelector } from '../../store/hooks';
 // import {
@@ -19,7 +21,7 @@ import { AddToCartButton } from '../../components/AddToCartButton/AddToCartButto
 
 const phoneToRender = testPhone[0];
 
-// const testImages = [mainTest, test1, test2, test3, test4];
+const testImages = [mainTest, test1, test2, test3, test4];
 
 export const ProductItem: React.FC = () => {
   const [currentPhone, setCurrentPhone] = useState(phoneToRender);
@@ -91,15 +93,33 @@ export const ProductItem: React.FC = () => {
     setActualCapacity(capacityFromButton);
   };
 
+  const settings = {
+    customPaging(i: number) {
+      return (
+        <img src={testImages[i]} alt="img" className="slick-image" />
+      );
+    },
+    dots: true,
+    dotsClass: 'slick-dots-for-small-img',
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    adaptiveHeight: true,
+  };
+
   return (
     <div className="item">
       <h1 className="item__title">{`${name} (iMT9G2FS/A)`}</h1>
 
       <div className="grid grid--desktop grid--tablet item__interactive-section">
-        <div className="grid__item--desktop-1-13 grid__item--tablet-1-6">
-          <section className="item__images-section">
-            <img src={mainTest} alt="" className="item__images-section--image" />
-          </section>
+        <div className="grid__item--desktop-1-13 grid__item--tablet-1-7 slider">
+          <Slider {...settings}>
+            {testImages.map(image => (
+              <img src={image} alt="" className="item__small-img" key={image} />
+            ))}
+          </Slider>
         </div>
 
         <div className="grid__item--desktop-15-20 grid__item--tablet-8-12">
