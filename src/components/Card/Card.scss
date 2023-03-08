@@ -103,23 +103,24 @@
       width: 40px;
       height: 40px;
       padding: 0;
+      margin-left: 8px;
 
       border: none;
       background-color: transparent;
 
-      background-image: url(./favorite.svg);
+      background-image: url(../../img/icons/favorite.svg);
       background-position: center;
 
       transition: all 0.3s ease;
 
       &:hover {
         transform: scale(1.1);
-        background-image: url(./favorite_hover.svg);
+        background-image: url(../../img/icons/favorite_hover.svg);
       }
 
       &--is-added {
         cursor: pointer;
-        background-image: url(./favorite_added.svg);
+        background-image: url(../../img/icons/favorite_added.svg);
 
         width: 40px;
         height: 40px;

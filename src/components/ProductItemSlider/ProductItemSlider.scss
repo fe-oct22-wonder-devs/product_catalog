@@ -1,0 +1,84 @@
+@import '../../styles/utils/mixins';
+
+&__image {
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 23px;
+
+  @include onTablet {
+    max-width: 274px;
+  }
+
+  @include onDesktop {
+    max-width: 442px;
+    height: 100%;
+  }
+}
+
+&__image-item {
+  height: 100%;
+}
+
+&__image-small {
+  max-width: 50px;
+
+  @include onTablet {
+    max-width: 35px;
+  }
+
+  .slick-current & {
+    border: 1px solid $color-white;
+  }
+
+  @include onDesktop {
+    max-width: 80px;
+    max-height: 80px;
+  }
+}
+
+&__slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  @include onTablet {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 60%;
+  }
+
+  @include onDesktop {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 50%;
+  }
+}
+
+&__slider-img {
+  @include notMobile {
+    width: calc(100% - 80px);
+    order: 1;
+  }
+}
+
+&__slider-nav {
+  .slick-track {
+    @include onTablet {
+      width: 50px !important;
+    }
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      width: 80px !important;
+    }
+  }
+
+  .slick-slide {
+    @include onTablet {
+      width: 50px !important;
+    }
+    @include onDesktop {
+      width: 80px !important;
+    }
+  }
+}
