@@ -16,13 +16,13 @@ export const BurgerMenu: React.FC<Props> = memo(({ toggleMenu }) => {
   return (
     <header className="burger">
       <section className="burger-header">
-        <a href="/" className="burger-header__logo-link">
+        <Link to="/" className="burger-header__logo-link">
           <img
             className="burger-header__logo"
             src={darkLogo}
             alt="NiceGadgets dark logo"
           />
-        </a>
+        </Link>
 
         <button type="button" onClick={toggleMenu}>
           <img

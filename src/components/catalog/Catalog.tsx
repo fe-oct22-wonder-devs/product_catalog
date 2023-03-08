@@ -4,6 +4,7 @@ import { colourStyles } from '../../styles/utils/helpers';
 import { Phone } from '../../types/Phone';
 import './Catalog.scss';
 import { MainGRID } from '../MainGRID/MainGRID';
+import { Loader } from '../Loader/Loader';
 
 export type SelectOptionType = {
   value: string;
@@ -18,6 +19,7 @@ type Props = {
   selectedPerPage: SelectOptionType | null;
   onSortChange: (selectedSort: SelectOptionType | null) => void;
   onQuantityChange: (selectedQuantity: SelectOptionType | null) => void;
+  isLoading: boolean;
 };
 
 export const sortOptions = [
@@ -40,6 +42,7 @@ export const Catalog: React.FC<Props> = ({
   selectedSort,
   onSortChange,
   onQuantityChange,
+  isLoading,
 }) => {
   useEffect(() => {
     perPageOptions[3] = { value: `${itemsCount}`, label: 'all' };
@@ -76,8 +79,11 @@ export const Catalog: React.FC<Props> = ({
         </div>
       </div>
 
-      <MainGRID products={products} />
-
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <MainGRID products={products} />
+      )}
     </main>
   );
 };
