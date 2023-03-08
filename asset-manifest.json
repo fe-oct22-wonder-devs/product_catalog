@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "./static/css/main.b6d3275d.chunk.css",
-    "main.js": "./static/js/main.557203ff.chunk.js",
-    "main.js.map": "./static/js/main.557203ff.chunk.js.map",
+    "main.css": "./static/css/main.4ad55a86.chunk.css",
+    "main.js": "./static/js/main.4ac1b2f6.chunk.js",
+    "main.js.map": "./static/js/main.4ac1b2f6.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8c9895b1.js",
     "runtime-main.js.map": "./static/js/runtime-main.8c9895b1.js.map",
     "static/css/2.a1be631c.chunk.css": "./static/css/2.a1be631c.chunk.css",
-    "static/js/2.6031bfbe.chunk.js": "./static/js/2.6031bfbe.chunk.js",
-    "static/js/2.6031bfbe.chunk.js.map": "./static/js/2.6031bfbe.chunk.js.map",
+    "static/js/2.c48ca4ab.chunk.js": "./static/js/2.c48ca4ab.chunk.js",
+    "static/js/2.c48ca4ab.chunk.js.map": "./static/js/2.c48ca4ab.chunk.js.map",
     "index.html": "./index.html",
     "static/css/2.a1be631c.chunk.css.map": "./static/css/2.a1be631c.chunk.css.map",
-    "static/css/main.b6d3275d.chunk.css.map": "./static/css/main.b6d3275d.chunk.css.map",
-    "static/js/2.6031bfbe.chunk.js.LICENSE.txt": "./static/js/2.6031bfbe.chunk.js.LICENSE.txt",
+    "static/css/main.4ad55a86.chunk.css.map": "./static/css/main.4ad55a86.chunk.css.map",
+    "static/js/2.c48ca4ab.chunk.js.LICENSE.txt": "./static/js/2.c48ca4ab.chunk.js.LICENSE.txt",
     "static/media/CartItem.scss": "./static/media/increase.66029f07.svg",
     "static/media/NiceGadgets-dark.0d919534.svg": "./static/media/NiceGadgets-dark.0d919534.svg",
     "static/media/NiceGadgets.c8e37169.svg": "./static/media/NiceGadgets.c8e37169.svg",
-    "static/media/MainSlider.scss": "./static/media/slider_small_iPhone14Pro.e657efc7.png",
+    "static/media/SliderCards.scss": "./static/media/arrow_right.bf3a1891.svg",
     "static/media/Footer.scss": "./static/media/back_to_top_hover.54b6b059.svg",
     "static/media/Header.scss": "./static/media/favourites.a8d9e134.svg",
     "static/media/category-accessories.05d41563.png": "./static/media/category-accessories.05d41563.png",
@@ -28,13 +28,14 @@
     "static/media/menu.3f3c3f2f.svg": "./static/media/menu.3f3c3f2f.svg",
     "static/media/not_found.f70ff45b.png": "./static/media/not_found.f70ff45b.png",
     "static/media/slick-theme.css": "./static/media/slick.c94f7671.ttf",
-    "static/media/slider_iPhone14Pro.08adf02e.png": "./static/media/slider_iPhone14Pro.08adf02e.png"
+    "static/media/slider_iPhone14Pro.08adf02e.png": "./static/media/slider_iPhone14Pro.08adf02e.png",
+    "static/media/MainSlider.scss": "./static/media/slider_small_iPhone14Pro.e657efc7.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8c9895b1.js",
     "static/css/2.a1be631c.chunk.css",
-    "static/js/2.6031bfbe.chunk.js",
-    "static/css/main.b6d3275d.chunk.css",
-    "static/js/main.557203ff.chunk.js"
+    "static/js/2.c48ca4ab.chunk.js",
+    "static/css/main.4ad55a86.chunk.css",
+    "static/js/main.4ac1b2f6.chunk.js"
   ]
 }
