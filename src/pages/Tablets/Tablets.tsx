@@ -22,8 +22,10 @@ export const Tablets = () => {
     = useState<SelectOptionType | null>(defaultQuantity);
   const [queryParams, setQueryParams] = useSearchParams();
   const [itemsCount, setItemsCount] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   async function getTabletsFromServer() {
+    setIsLoading(true);
     const items = await getTabletPagination({
       page: currentPage,
       perPage: selectedQuantity?.value ?? undefined,
@@ -31,6 +33,7 @@ export const Tablets = () => {
     });
 
     setTabletsFromServer(items);
+    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -82,6 +85,7 @@ export const Tablets = () => {
         title="Tablets"
         onSortChange={(value: SelectOptionType | null) => sortChangeHandler(value)}
         onQuantityChange={(value: SelectOptionType | null) => perPageChangeHandler(value)}
+        isLoading={isLoading}
       />
       <ItemsPagination
         perPage={selectedQuantity?.value || defaultQuantity.value}
