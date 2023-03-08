@@ -19,3 +19,17 @@ export const colourStyles = {
     borderRadius: 8,
   }),
 };
+
+export const sliderSyles = {
+  container: (styles: {}) => ({
+    ...styles,
+
+  }),
+  navigation: (base: {}) => ({
+    ...base,
+
+  }),
+  pagination: (base: {}) => ({
+    ...base,
+  }),
+};
