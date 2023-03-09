@@ -1,0 +1,24 @@
+@import '../../styles/utils/variables'; 
+@import '../../styles/utils/mixins'; 
+
+
+.breadcrumbs {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: $color-secondary;
+  margin-bottom: 25px;
+
+  @include onTablet {
+    margin-bottom: 40px;
+  }
+}
+
+.backcrumb {
+  margin-left: 153px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  padding-bottom: 16px;
+  color: $color-secondary;
+}

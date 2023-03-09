@@ -48,7 +48,7 @@
         background-repeat: no-repeat;
         background-size: auto;
         background-position: center;
-        
+        margin-right: 8px;
       }
 
       &-prev {
@@ -61,9 +61,9 @@
  }
 
 .phonesSlider__cards .slick-list {
-  margin: 0 -7px;
 
   & .slick-slide  { 
     padding: 0 9px; 
+
  }
 }
