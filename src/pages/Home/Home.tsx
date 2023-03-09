@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { MainSlider } from '../../components/mainSlider/MainSlider';
 import './Home.scss';
 import { Categories } from '../../components/Categories/Categories';
-import { SliderCards } from '../../components/SliderNewModels/SliderCards';
+import { SliderCards } from '../../components/SliderCards/SliderCards';
 import { Phone } from '../../types/Phone';
 import { getPhonesPagination } from '../../api/phones';
 
