@@ -1,5 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames';
+
 import './CartItem.scss';
+
 import { PhoneInCart } from '../../types/Phone';
 import { useAppDispatch } from '../../store/hooks';
 import { increment, decrement, removeFromCart } from '../../store/cart/cartSlice';
@@ -40,23 +44,28 @@ export const CartItem: React.FC<Props> = React.memo(({ phone }) => {
         </button>
 
         <div className="cart-item__image-container">
-          <img
-            src={image}
-            alt={name}
-            className="cart-item__image"
-          />
+          <Link to={`/phones/${phone.phoneId}`}>
+            <img
+              src={image}
+              alt={name}
+              className="cart-item__image"
+            />
+          </Link>
         </div>
 
         <p className="cart-item__title">
-          {`${name} (iMT9G2FS/A)`}
+          <Link to={`/phones/${phone.phoneId}`}>
+            {`${name} (iMT9G2FS/A)`}
+          </Link>
         </p>
+
       </div>
 
       <div className="cart-item__price-section">
         <div className="cart-item__amount-section">
           <button
             type="button"
-            className="cart-item__price-section--decrease"
+            className={classNames('cart-item__price-section--decrease', { 'cart-item__price-section--decrease--is-active': count > 1 })}
             onClick={handleDecreaseClick}
             disabled={count === 1}
           >
