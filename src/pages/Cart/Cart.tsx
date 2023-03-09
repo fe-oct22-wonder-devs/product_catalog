@@ -12,6 +12,8 @@ export const Cart: React.FC = () => {
   const totalAmount = gadgetsInCart.reduce((acc, phone) => (acc + (phone.price * phone.count)), 0);
 
   const handleCheckoutClick = () => {
+    window.localStorage.clear();
+
     setIsModalOpened(true);
 
     setTimeout(() => {

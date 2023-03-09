@@ -1,4 +1,5 @@
 import { Phone } from '../types/Phone';
+import { PhoneItem } from '../types/PhoneItem';
 
 const BASE_URL = 'https://productcatalogapi-production-840a.up.railway.app';
 
@@ -31,6 +32,10 @@ export const getTabletPagination = (searchParams: QueryParams) => {
   const queryString = objToQueryString(searchParams);
 
   return get<Phone[]>(`/tablets?${queryString}`);
+};
+
+export const getPhoneById = (phoneSlug: string) => {
+  return get<[PhoneItem, Phone]>(`/phones/${phoneSlug}`);
 };
 
 export const getPhonesCount = () => get<number>('/phones/length');
