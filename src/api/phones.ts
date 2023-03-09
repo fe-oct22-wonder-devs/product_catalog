@@ -40,5 +40,4 @@ export const getPhoneById = (phoneSlug: string) => {
 
 export const getPhonesCount = () => get<number>('/phones/length');
 export const getTabletsCount = () => get<number>('/tablets/length');
-
-// export const getUser = (userId: number) => get<User>(`/users/${userId}`);
+export const getHotPrices = () => get<Phone[]>('/phones/discount?length=5');

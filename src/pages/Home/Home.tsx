@@ -4,10 +4,12 @@ import './Home.scss';
 import { Categories } from '../../components/Categories/Categories';
 import { SliderCards } from '../../components/SliderCards/SliderCards';
 import { Phone } from '../../types/Phone';
-import { getPhonesPagination } from '../../api/phones';
+import { getHotPrices, getPhonesPagination } from '../../api/phones';
+import { Loader } from '../../components/Loader/Loader';
 
 export const Home: React.FC = () => {
   const [phonesFromServer, setPhonesFromServer] = useState<Phone[]>([]);
+  const [bigDiscountGadgets, setBigDiscountGadgets] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   async function getPhonesFromServer() {
@@ -18,8 +20,11 @@ export const Home: React.FC = () => {
       sort: 'newest',
     });
 
-    setIsLoading(false);
+    const discountItem = await getHotPrices();
+
+    setBigDiscountGadgets(discountItem);
     setPhonesFromServer(items);
+    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -32,10 +37,19 @@ export const Home: React.FC = () => {
         <MainSlider />
       </div>
       <div className="wrapper">
-        {!isLoading && (
+        {isLoading ? (
+          <Loader />
+        ) : (
           <SliderCards title="Brand new models" items={phonesFromServer} />
         )}
+
         <Categories />
+
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <SliderCards title="Hot prices" items={bigDiscountGadgets} />
+        )}
       </div>
     </>
   );

@@ -49,17 +49,19 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
   return (
     <Link to={`/phones/${phone.phoneId}`}>
       <div className="card">
-        <img
-          className="card__image"
-          src={image}
-          alt={name}
-        />
+        <div className="card__header">
+          <img
+            className="card__image"
+            src={image}
+            alt={name}
+          />
 
-        <h2 className="card__title">{`${name} (iMT9G2FS/A)`}</h2>
+          <h2 className="card__title">{`${name} (iMT9G2FS/A)`}</h2>
 
-        <div className="card__price">
-          <p className="card__price__actual">{`$${price}`}</p>
-          <p className="card__price__full">{`$${fullPrice}`}</p>
+          <div className="card__price">
+            <p className="card__price__actual">{`$${price}`}</p>
+            <p className="card__price__full">{`$${fullPrice}`}</p>
+          </div>
         </div>
 
         <div className="card__line"></div>

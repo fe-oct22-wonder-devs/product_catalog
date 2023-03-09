@@ -4,8 +4,8 @@ import { Puff } from 'react-loader-spinner';
 export const Loader: FC = memo(() => {
   return (
     <Puff
-      height="180"
-      width="180"
+      height="150"
+      width="150"
       radius={1}
       color="pink"
       ariaLabel="puff-loading"
@@ -13,7 +13,7 @@ export const Loader: FC = memo(() => {
         display: 'flex',
         'justify-content': 'center',
         height: '100%',
-        padding: '30px',
+        padding: '179px',
       }}
       wrapperClass=""
       // visible={true}
