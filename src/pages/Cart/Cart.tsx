@@ -4,6 +4,7 @@ import { ModalWindow } from '../../components/ModalWindow/ModalWIndow';
 import './Cart.scss';
 import { useAppSelector } from '../../store/hooks';
 import { selectCart } from '../../store/cart/cartSlice';
+import emptyCart from '../../img/empty_cart.png';
 
 export const Cart: React.FC = () => {
   const [isModalOpened, setIsModalOpened] = useState(false);
@@ -27,10 +28,12 @@ export const Cart: React.FC = () => {
       <h1 className="title">Cart</h1>
       <div className="cart">
         <div className="cart__container-for-added">
-          {gadgetsInCart.map(phone => (
-            <CartItem phone={phone} key={phone.id} />
-          ))}
+          {gadgetsInCart.length === 0 && (<img src={emptyCart} alt="empty cart" />)}
         </div>
+
+        {gadgetsInCart.map(phone => (
+          <CartItem phone={phone} key={phone.id} />
+        ))}
 
         <div className="cart__cashout">
           <p className="cart__cashout--total-amount">{`$${totalAmount}`}</p>
