@@ -11,7 +11,7 @@ import {
 } from '../../components/catalog/Catalog';
 import { ItemsPagination } from '../../components/pagination/Pagination';
 
-const defaultQuantity = perPageOptions[0];
+const defaultQuantity = perPageOptions[1];
 const defaultSort = sortOptions[0];
 
 export const Phones = () => {
