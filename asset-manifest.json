@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.ff6a23c7.chunk.css",
-    "main.js": "./static/js/main.94d5f7e8.chunk.js",
-    "main.js.map": "./static/js/main.94d5f7e8.chunk.js.map",
+    "main.js": "./static/js/main.b2fd5952.chunk.js",
+    "main.js.map": "./static/js/main.b2fd5952.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8c9895b1.js",
     "runtime-main.js.map": "./static/js/runtime-main.8c9895b1.js.map",
     "static/css/2.a1be631c.chunk.css": "./static/css/2.a1be631c.chunk.css",
@@ -22,9 +22,11 @@
     "static/media/category-phones.58ac9e4b.png": "./static/media/category-phones.58ac9e4b.png",
     "static/media/category-tablets.3e0b4903.png": "./static/media/category-tablets.3e0b4903.png",
     "static/media/close.cdfb6ae5.svg": "./static/media/close.cdfb6ae5.svg",
+    "static/media/empty-heart1.a2aebcc4.webp": "./static/media/empty-heart1.a2aebcc4.webp",
     "static/media/ProductItem.scss": "./static/media/favorite_hover.928c1dbc.svg",
     "static/media/footer__logo.a5488e09.svg": "./static/media/footer__logo.a5488e09.svg",
     "static/media/menu.3f3c3f2f.svg": "./static/media/menu.3f3c3f2f.svg",
+    "static/media/no_result.2dee7d24.png": "./static/media/no_result.2dee7d24.png",
     "static/media/not_found.f70ff45b.png": "./static/media/not_found.f70ff45b.png",
     "static/media/slick-theme.css": "./static/media/slick.c94f7671.ttf",
     "static/media/slider_iPhone14Pro.08adf02e.png": "./static/media/slider_iPhone14Pro.08adf02e.png",
@@ -35,6 +37,6 @@
     "static/css/2.a1be631c.chunk.css",
     "static/js/2.a5ca4473.chunk.js",
     "static/css/main.ff6a23c7.chunk.css",
-    "static/js/main.94d5f7e8.chunk.js"
+    "static/js/main.b2fd5952.chunk.js"
   ]
 }
