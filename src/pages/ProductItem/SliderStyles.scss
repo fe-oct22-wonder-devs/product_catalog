@@ -24,6 +24,14 @@
 
 .slick-slide {
   position: relative;
+
+  @include onTablet {
+    padding-left: 40px;
+  }
+
+  @include onDesktop {
+    padding-left: 80px;
+  }
 }
 
 ul.slick-dots-for-small-img  {
@@ -31,6 +39,8 @@ ul.slick-dots-for-small-img  {
   display: flex !important;
   flex-direction: column;
   gap: 8px;
+  background-color: white;
+  height: 100%;
 
   @include onDesktop {
     top: 0;
