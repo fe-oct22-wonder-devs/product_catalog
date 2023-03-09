@@ -35,6 +35,10 @@
   &__color-selector {
     width: 32px;
     height: 32px;
+    
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
 
     border: 1px solid #e2e6e9;
     border-radius: 50%;
@@ -44,6 +48,10 @@
     transition: border-color 0.3s;
 
     background-color: #fff;
+
+    &--is-active {
+      border-color: $color-primary;
+    }
 
     &__color {
       content: '';
@@ -62,8 +70,10 @@
     }
 
     &:hover {
-      border-color: #b4bdc4;
+      border-color: $color-icons;
     }
+
+    
   }
 
   &__color {
