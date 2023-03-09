@@ -27,6 +27,13 @@
     width: 752px;
   }
 
+  &--link-to-phone {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__info-section {
     display: flex;
     flex-direction: row;
@@ -61,6 +68,10 @@
 
       &:hover {
         transform: scale(1.1);
+      }
+
+      &--is-active {
+        background-image: url(../../img/icons/decrease_active.svg);
       }
     }
 
