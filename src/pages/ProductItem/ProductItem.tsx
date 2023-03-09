@@ -8,7 +8,7 @@ import Slider from 'react-slick';
 import { AddToCartButton } from '../../components/AddToCartButton/AddToCartButton';
 import { PhoneItem } from '../../types/PhoneItem';
 import { getPhoneById, getPhonesPagination } from '../../api/phones';
-import { SliderCards } from '../../components/SliderNewModels/SliderCards';
+import { SliderCards } from '../../components/SliderCards/SliderCards';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
   addToFavorite,
