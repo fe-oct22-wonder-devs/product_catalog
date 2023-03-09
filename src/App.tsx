@@ -17,6 +17,7 @@ import { useAppDispatch, useAppSelector, useLocalStorage } from './store/hooks';
 import { addToCart, selectCart } from './store/cart/cartSlice';
 import { Phone, PhoneInCart } from './types/Phone';
 import { addToFavorite, selectFavorite } from './store/cart/favoriteSlice';
+import { ProductItem } from './pages/ProductItem/ProductItem';
 
 export const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,7 +66,10 @@ export const App: React.FC = () => {
                 <Route path="*" element={<PageNotFound />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Navigate to="/" replace />} />
-                <Route path="/phones" element={<Phones />} />
+                <Route path="/phones">
+                  <Route index element={<Phones />} />
+                  <Route path=":phoneSlug" element={<ProductItem />} />
+                </Route>
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/accessories" element={<Accessories />} />
                 <Route path="/rights" element={<Rights />} />
