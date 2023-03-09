@@ -47,8 +47,8 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
   };
 
   return (
-    <Link to={`/phones/${phone.phoneId}`}>
-      <div className="card">
+    <div className="card">
+      <Link to={`/phones/${phone.phoneId}`}>
         <div className="card__header">
           <img
             className="card__image"
@@ -63,37 +63,37 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
             <p className="card__price__full">{`$${fullPrice}`}</p>
           </div>
         </div>
+      </Link>
 
-        <div className="card__line"></div>
+      <div className="card__line"></div>
 
-        <div className="card__specs">
-          <div className="card__container">
-            <p className="card__specs__text">Screen</p>
-            <p className="card__specs__value">{screen}</p>
-          </div>
-
-          <div className="card__container">
-            <p className="card__specs__text">Capacity</p>
-            <p className="card__specs__value">{capacity}</p>
-          </div>
-
-          <div className="card__container">
-            <p className="card__specs__text">RAM</p>
-            <p className="card__specs__value">{ram}</p>
-          </div>
+      <div className="card__specs">
+        <div className="card__container">
+          <p className="card__specs__text">Screen</p>
+          <p className="card__specs__value">{screen}</p>
         </div>
 
-        <div className="card__buy">
-          <AddToCartButton isAdded={isAddedToCart} onAdd={handleAddToCartClick} />
+        <div className="card__container">
+          <p className="card__specs__text">Capacity</p>
+          <p className="card__specs__value">{capacity}</p>
+        </div>
 
-          <button
-            type="button"
-            className={classNames(!isAddedToFavorite ? 'card__buy__favorite' : 'card__buy__favorite--is-added')}
-            onClick={handleAddToFavoriteClick}
-          >
-          </button>
+        <div className="card__container">
+          <p className="card__specs__text">RAM</p>
+          <p className="card__specs__value">{ram}</p>
         </div>
       </div>
-    </Link>
+
+      <div className="card__buy">
+        <AddToCartButton isAdded={isAddedToCart} onAdd={handleAddToCartClick} />
+
+        <button
+          type="button"
+          className={classNames(!isAddedToFavorite ? 'card__buy__favorite' : 'card__buy__favorite--is-added')}
+          onClick={handleAddToFavoriteClick}
+        >
+        </button>
+      </div>
+    </div>
   );
 });
