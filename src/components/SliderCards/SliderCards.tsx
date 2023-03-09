@@ -15,7 +15,7 @@ export const SliderCards: React.FC<Props> = ({ title, items }) => {
   const sliderRef = useRef<Slider>(null);
 
   const sliderSettings = {
-    arrows: false,
+    arrows: true,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
