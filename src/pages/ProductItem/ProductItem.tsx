@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './ProductItem.scss';
 import './SliderStyles.scss';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import classNames from 'classnames';
 import Slider from 'react-slick';
 import Typography from '@mui/material/Typography';
 import { AddToCartButton } from '../../components/AddToCartButton/AddToCartButton';
 import { PhoneItem } from '../../types/PhoneItem';
-import { getPhoneById, getPhonesPagination } from '../../api/phones';
+import { getItemById, getPhonesPagination } from '../../api/phones';
 import { SliderCards } from '../../components/SliderCards/SliderCards';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
@@ -46,9 +46,13 @@ export const ProductItem: React.FC = () => {
   const [actualCapacity, setActualCapacity] = useState('');
   const [phonesForSlider, setPhonesForSlider] = useState<Phone[]>([]);
 
+  const location = useLocation();
+
+  const categoryName = location.pathname.split('/')[1];
+
   const loadItem = async (phoneId: string | undefined) => {
     if (phoneId) {
-      const loadedItem = await getPhoneById(phoneId);
+      const loadedItem = await getItemById(phoneId, categoryName);
       const newItemsForSlider = await getPhonesPagination({ perPage: '20', page: '1', sort: 'newest' });
 
       setCurrentPhone(loadedItem[0]);

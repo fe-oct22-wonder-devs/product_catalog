@@ -73,7 +73,10 @@ export const App: React.FC = () => {
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/accessories" element={<Accessories />} />
                 <Route path="/rights" element={<Rights />} />
-                <Route path="/tablets" element={<Tablets />} />
+                <Route path="/tablets">
+                  <Route index element={<Tablets />} />
+                  <Route path=":phoneSlug" element={<ProductItem />} />
+                </Route>
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/favorite" element={<Favorite />} />
               </Routes>
