@@ -23,8 +23,9 @@
 }
 
 @mixin mainWrapper {
-  font-family: 'Mont-Regular';
-  min-height: 80vh;
+  //font-family: 'Mont-Regular';
+  //min-height: 80vh;
+  min-height: calc(100vh - 260px - 48px);
   max-width: 1200px;
   min-width: 320px;
   margin: 0 auto;

@@ -32,9 +32,11 @@ html {
 
   @include onLaptop; @include onTablet {
     padding: 40px 24px;
+    min-height: calc(100vh - 95px - 48px);
   };
 
   @include onDesktop {
+    min-height: calc(100vh - 95px - 64px);
     padding: 40px 32px;
   };
 }
