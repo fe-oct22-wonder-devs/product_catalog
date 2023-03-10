@@ -18,6 +18,13 @@
     }
   }
 
+  &__container-for-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__cashout {
     display: flex;
     flex-direction: column;
