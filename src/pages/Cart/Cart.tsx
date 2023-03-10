@@ -28,33 +28,45 @@ export const Cart: React.FC = () => {
     <div className="wrapper">
       <Back />
       <h1 className="title">Cart</h1>
-      <div className="cart">
-        <div className="cart__container-for-added">
-          {gadgetsInCart.length === 0 && (<img src={emptyCart} alt="empty cart" />)}
-        </div>
-
-        {gadgetsInCart.map(phone => (
-          <CartItem phone={phone} key={phone.id} />
-        ))}
-
-        <div className="cart__cashout">
-          <p className="cart__cashout--total-amount">{`$${totalAmount}`}</p>
-
-          <p className="cart__cashout--total-text">
-            {`Total for ${gadgetsInCart.length} items`}
-          </p>
-
-          <div className="cart__cashout--separator"></div>
+      {gadgetsInCart.length === 0 ? (
+        <div className="cart__container-for-empty">
+          <img src={emptyCart} alt="empty cart" className="cart_empty-image" />
 
           <button
             type="button"
-            className="cart__cashout--button"
-            onClick={handleCheckoutClick}
+            className="not-found__button"
+            onClick={() => window.window.location.replace('https://fe-oct22-wonder-devs.github.io/product_catalog/#/phones')}
           >
-            Checkout
+            {'Let\'s buy something'}
           </button>
         </div>
-      </div>
+      ) : (
+        <div className="cart">
+          <div className="cart__container-for-added">
+            {gadgetsInCart.map(phone => (
+              <CartItem phone={phone} key={phone.id} />
+            ))}
+          </div>
+
+          <div className="cart__cashout">
+            <p className="cart__cashout--total-amount">{`$${totalAmount}`}</p>
+
+            <p className="cart__cashout--total-text">
+              {`Total for ${gadgetsInCart.length} items`}
+            </p>
+
+            <div className="cart__cashout--separator"></div>
+
+            <button
+              type="button"
+              className="cart__cashout--button"
+              onClick={handleCheckoutClick}
+            >
+              Checkout
+            </button>
+          </div>
+        </div>
+      )}
 
       {isModalOpened && (
         <ModalWindow />
