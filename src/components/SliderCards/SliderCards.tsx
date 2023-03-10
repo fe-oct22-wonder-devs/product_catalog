@@ -36,6 +36,13 @@ export const SliderCards: React.FC<Props> = ({ title, items }) => {
           centerPadding: '50px',
         },
       },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '50px',
+        },
+      },
     ],
   };
 

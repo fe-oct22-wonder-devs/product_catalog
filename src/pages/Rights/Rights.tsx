@@ -1,10 +1,14 @@
 import React from 'react';
 import './Rights.scss';
+import Typography from '@mui/material/Typography';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumds';
 
 export const Rights = () => {
   return (
     <div className="wrapper">
-      <h1>Rights</h1>
+      <Breadcrumbs>
+        <Typography color="text.primary">Rights</Typography>
+      </Breadcrumbs>
     </div>
 
   );

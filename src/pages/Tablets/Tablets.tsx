@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Typography from '@mui/material/Typography';
 import { useSearchParams } from 'react-router-dom';
 import { getTabletPagination, getTabletsCount } from '../../api/phones';
 import { Phone } from '../../types/Phone';
@@ -10,6 +11,7 @@ import {
   perPageOptions,
 } from '../../components/catalog/Catalog';
 import { ItemsPagination } from '../../components/pagination/Pagination';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumds';
 
 const defaultQuantity = perPageOptions[0];
 const defaultSort = sortOptions[0];
@@ -77,6 +79,9 @@ export const Tablets = () => {
 
   return (
     <div className="wrapper">
+      <Breadcrumbs>
+        <Typography color="text.primary">Tablets</Typography>
+      </Breadcrumbs>
       <Catalog
         itemsCount={itemsCount}
         selectedPerPage={selectedQuantity}
