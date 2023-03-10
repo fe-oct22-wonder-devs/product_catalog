@@ -3,6 +3,7 @@ import './ProductItem.scss';
 import './SliderStyles.scss';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import classNames from 'classnames';
+
 import Slider from 'react-slick';
 import Typography from '@mui/material/Typography';
 import { AddToCartButton } from '../../components/AddToCartButton/AddToCartButton';
@@ -19,6 +20,7 @@ import { addToCart, removeFromCart, selectCart } from '../../store/cart/cartSlic
 import { Phone } from '../../types/Phone';
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumds';
 import { Back } from '../../components/Breadcrumbs/Back';
+import { Loader } from '../../components/Loader/Loader';
 
 const phoneForTest = {
   id: '1',
@@ -45,12 +47,14 @@ export const ProductItem: React.FC = () => {
   const [actualColor, setActualColor] = useState('');
   const [actualCapacity, setActualCapacity] = useState('');
   const [phonesForSlider, setPhonesForSlider] = useState<Phone[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const location = useLocation();
 
   const categoryName = location.pathname.split('/')[1];
 
   const loadItem = async (phoneId: string | undefined) => {
+    setIsLoading(true);
     if (phoneId) {
       const loadedItem = await getItemById(phoneId, categoryName);
       const newItemsForSlider = await getPhonesPagination({ perPage: '20', page: '1', sort: 'newest' });
@@ -62,6 +66,8 @@ export const ProductItem: React.FC = () => {
       setActualCapacity(loadedItem[0].capacity);
       setActualColor(loadedItem[0].color);
     }
+
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -132,18 +138,24 @@ export const ProductItem: React.FC = () => {
         ) : (' ')}
       </Breadcrumbs>
       <Back />
-      {currentPhone && (
+      {currentPhone ? (
         <>
           <div className="item">
             <h1 className="item__title">{`${currentPhone.name} (iMT9G2FS/A)`}</h1>
 
             <div className="grid grid--desktop grid--tablet item__interactive-section">
               <div className="grid__item--desktop-1-13 grid__item--tablet-1-7 slider">
-                <Slider {...settings}>
-                  {images.map(image => (
-                    <img src={image} alt="" className="item__small-img" key={image} />
-                  ))}
-                </Slider>
+                {!isLoading ? (
+                  <>
+                    <Slider {...settings}>
+                      {images.map(image => (
+                        <img src={image} alt="" className="item__small-img" key={image} />
+                      ))}
+                    </Slider>
+                  </>
+                ) : (
+                  <Loader />
+                )}
               </div>
 
               <div className="grid__item--desktop-15-20 grid__item--tablet-8-12">
@@ -296,6 +308,8 @@ export const ProductItem: React.FC = () => {
 
           </div>
         </>
+      ) : (
+        <Loader />
       )}
     </div>
   );

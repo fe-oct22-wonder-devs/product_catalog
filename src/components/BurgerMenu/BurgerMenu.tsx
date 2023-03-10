@@ -5,6 +5,7 @@ import darkLogo from '../../img/Logo/NiceGadgets-dark.svg';
 import close from '../../img/icons/close.svg';
 import { useAppSelector } from '../../store/hooks';
 import { selectCart } from '../../store/cart/cartSlice';
+import { selectFavorite } from '../../store/cart/favoriteSlice';
 
 interface Props {
   toggleMenu: () => void,
@@ -12,6 +13,7 @@ interface Props {
 
 export const BurgerMenu: React.FC<Props> = memo(({ toggleMenu }) => {
   const gadgetsInCart = useAppSelector(selectCart);
+  const gadgetsInFavorite = useAppSelector(selectFavorite);
 
   return (
     <header className="burger">
@@ -84,7 +86,9 @@ export const BurgerMenu: React.FC<Props> = memo(({ toggleMenu }) => {
           onClick={toggleMenu}
         >
           <div className="header__icon header__icon--favourites">
-            <div className="icon-counter">4</div>
+            {gadgetsInFavorite.length > 0 && (
+              <div className="icon-counter">{gadgetsInFavorite.length}</div>
+            )}
           </div>
         </Link>
         <Link
