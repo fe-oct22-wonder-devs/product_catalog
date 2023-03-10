@@ -11,7 +11,16 @@ export const Accessories = () => {
         <Typography color="text.primary">Accessories</Typography>
       </Breadcrumbs>
       <h1 className="title">Accessories</h1>
-      <img src={noResult} alt="No result" style={{ display: 'block', height: '50vh', margin: '0 auto' }} />
+      <img
+        src={noResult}
+        alt="No result"
+        style={{
+          display: 'block',
+          objectFit: 'contain',
+          height: '50vh',
+          margin: '0 auto',
+        }}
+      />
     </div>
   );
 };
