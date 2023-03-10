@@ -34,8 +34,8 @@ export const getTabletPagination = (searchParams: QueryParams) => {
   return get<Phone[]>(`/tablets?${queryString}`);
 };
 
-export const getPhoneById = (phoneSlug: string) => {
-  return get<[PhoneItem, Phone]>(`/phones/${phoneSlug}`);
+export const getItemById = (phoneSlug: string, category: string) => {
+  return get<[PhoneItem, Phone]>(`/${category}/${phoneSlug}`);
 };
 
 export const getPhonesCount = () => get<number>('/phones/length');

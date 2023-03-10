@@ -48,7 +48,7 @@ export const Card: React.FC<Props> = React.memo(({ phone }) => {
 
   return (
     <div className="card">
-      <Link to={`/phones/${phone.phoneId}`}>
+      <Link to={`/${phone.category}/${phone.phoneId}`}>
         <div className="card__header">
           <img
             className="card__image"
