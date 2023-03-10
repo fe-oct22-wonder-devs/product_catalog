@@ -247,11 +247,11 @@ export const ProductItem: React.FC = () => {
                 <section className="item__about">
                   <h2 className="item__about--title">About</h2>
                   <div className="separator"></div>
-                  {currentPhone.description.map(descBlock => (
-                    <>
+                  {currentPhone.description.map((descBlock) => (
+                    <React.Fragment key={descBlock.title}>
                       <p className="item__about--blockTitle">{descBlock.title}</p>
                       <div className="item__about--text">{descBlock.text}</div>
-                    </>
+                    </React.Fragment>
                   ))}
                 </section>
               </div>

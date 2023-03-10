@@ -4,24 +4,24 @@
   max-width: 1136px;
   overflow-x: hidden;
   margin: 0 auto 80px;
-  
+
   &__title {
     margin-bottom: 24px;
-  
+
     font-weight: 800;
     font-size: 32px;
     line-height: 41px;
     color: $color-primary;
-  } 
+  }
 
     &__butttons {
       display: flex;
       justify-content: space-between;
     }
-  
+
     &__controls {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       margin-bottom: 1.5rem;
     }
 
@@ -62,8 +62,8 @@
 
 .phonesSlider__cards .slick-list {
 
-  & .slick-slide  { 
-    padding: 0 9px; 
+  & .slick-slide  {
+    padding: 0 9px;
 
  }
 }
