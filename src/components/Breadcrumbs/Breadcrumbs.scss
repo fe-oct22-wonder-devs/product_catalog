@@ -6,7 +6,6 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
-  color: $color-secondary;
   margin-bottom: 25px;
 
   @include onTablet {
@@ -15,10 +14,11 @@
 }
 
 .backcrumb {
-  margin-left: 153px;
-  font-weight: 600;
-  font-size: 12px;
+  cursor: pointer;
+  display: block;
+
+  font-weight: 700;
   line-height: 15px;
-  padding-bottom: 16px;
-  color: $color-secondary;
+  margin-bottom: 16px;
+  color: $color-primary;
 }

@@ -5,6 +5,7 @@ import './Cart.scss';
 import { useAppSelector } from '../../store/hooks';
 import { selectCart } from '../../store/cart/cartSlice';
 import emptyCart from '../../img/empty_cart.png';
+import { Back } from '../../components/Breadcrumbs/Back';
 
 export const Cart: React.FC = () => {
   const [isModalOpened, setIsModalOpened] = useState(false);
@@ -25,6 +26,7 @@ export const Cart: React.FC = () => {
 
   return (
     <div className="wrapper">
+      <Back />
       <h1 className="title">Cart</h1>
       <div className="cart">
         <div className="cart__container-for-added">
