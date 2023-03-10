@@ -23,9 +23,9 @@ export const Favorite: React.FC = memo(() => {
           alt="empty hart"
           style={{
             display: 'block',
+            objectFit: 'contain',
             height: '50vh',
             margin: '0 auto',
-            borderRadius: '20px',
           }}
         />
       )}
