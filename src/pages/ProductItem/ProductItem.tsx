@@ -3,7 +3,6 @@ import './ProductItem.scss';
 import './SliderStyles.scss';
 import { Link, useParams } from 'react-router-dom';
 import classNames from 'classnames';
-
 import Slider from 'react-slick';
 import Typography from '@mui/material/Typography';
 import { AddToCartButton } from '../../components/AddToCartButton/AddToCartButton';
@@ -128,7 +127,7 @@ export const ProductItem: React.FC = () => {
           <Typography>{currentPhone.name}</Typography>
         ) : (' ')}
       </Breadcrumbs>
-      <Back to={`/${itemForCart.category}`} />
+      <Back />
       {currentPhone && (
         <>
           <div className="item">

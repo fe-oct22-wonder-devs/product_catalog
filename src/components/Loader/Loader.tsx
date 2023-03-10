@@ -11,7 +11,7 @@ export const Loader: FC = memo(() => {
       ariaLabel="puff-loading"
       wrapperStyle={{
         display: 'flex',
-        'justify-content': 'center',
+        justifyContent: 'center',
         height: '100%',
         padding: '179px',
       }}
