@@ -22,6 +22,7 @@
   }
 
   &__title {
+    font-family: 'Mont-Bold';
     margin-bottom: 32px;
 
     font-style: normal;
@@ -136,6 +137,7 @@
     &-actual {
       margin-right: 8px;
 
+      font-family: 'Mont-Bold';
       font-style: normal;
       font-weight: 800;
       font-size: 32px;
@@ -210,6 +212,7 @@
 
     &--title {
       margin-bottom: 16px;
+      font-family: 'Mont-SemiBold';
       font-style: normal;
       font-weight: 700;
       font-size: 20px;
@@ -218,6 +221,7 @@
     }
 
     &--blockTitle {
+      font-family: 'Mont-SemiBold';
       margin-bottom: 16px;
       font-style: normal;
       font-weight: 700;
@@ -244,6 +248,7 @@
 
     &--title {
       margin-bottom: 16px;
+      font-family: 'Mont-SemiBold';
       font-style: normal;
       font-weight: 700;
       font-size: 20px;
@@ -277,6 +282,7 @@
 
   &__recommended {
     &--title {
+      font-family: 'Mont-Bold';
       font-style: normal;
       font-weight: 800;
       font-size: 22px;

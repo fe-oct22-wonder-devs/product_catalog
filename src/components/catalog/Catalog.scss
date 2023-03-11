@@ -45,7 +45,8 @@
 
   &__sort {
     display: inline-block;
-
+    
+    font-family: 'Mont-SemiBold';
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
@@ -53,6 +54,7 @@
     color: $color-secondary;
 
     &--name {
+      font-family: 'Mont-SemiBold';
       margin-bottom: 4px;
       font-weight: 700;
       font-size: 12px;
@@ -71,6 +73,7 @@
     color: $color-primary;
     
     @include onTablet {
+      font-family: 'Mont-Bold';
       font-weight: 800;
       font-size: 48px;
       line-height: 56px;
