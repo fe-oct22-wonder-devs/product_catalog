@@ -46,7 +46,8 @@
 
     &__actual {
       margin-right: 8px;
-
+      
+      font-family: 'Mont-Bold';
       font-style: normal;
       font-weight: 800;
       font-size: 22px;
@@ -85,6 +86,7 @@
     }
 
     &__value {
+      font-family: 'Mont-SemiBold';
       font-style: normal;
       font-weight: 700;
       font-size: 12px;
