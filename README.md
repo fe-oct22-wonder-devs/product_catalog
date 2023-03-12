@@ -38,7 +38,7 @@ Built using React and other related technologies, hosted on the Railway service.
   </a> 
 
   <a href="https://redux.js.org/" target="_blank" rel="noreferrer">
-    <img src="https://assets.stickpng.com/images/5848309bcef1014c0b5e4a9a.png" align="center" alt="redux" width="40" height="40"/>
+    <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.svg" align="center" alt="redux" width="40" height="40"/>
   </a> 
  
 </p>
