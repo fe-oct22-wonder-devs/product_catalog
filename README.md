@@ -1,7 +1,7 @@
 
 # [Nice Goods Shop](https://fe-oct22-wonder-devs.github.io/product_catalog/)
 
-This project is an online store with implemented navigation and product catalog where users  can browse products, sort them by various criteria and adjust the quantity on the page, add products to their carts and favorites, calculate the total price and adjust their quantity in their carts.
+This project is an online store with implemented navigation and product catalog where users can browse products, sort them by various criteria and adjust the quantity on the page, add products to their carts and favorites, calculate the total price and adjust their quantity in their carts.
 
 Built using React and other related technologies, hosted on the Railway service. All the data displayed here is obtained directly from the server, which we implemented in the backend part. 
 
@@ -38,7 +38,7 @@ Built using React and other related technologies, hosted on the Railway service.
   </a> 
 
   <a href="https://redux.js.org/" target="_blank" rel="noreferrer">
-    <img src="https://assets.stickpng.com/images/5848309bcef1014c0b5e4a9a.png"align="center" alt="redux" width="40" height="40"/>
+    <img src="https://assets.stickpng.com/images/5848309bcef1014c0b5e4a9a.png" align="center" alt="redux" width="40" height="40"/>
   </a> 
  
 </p>
